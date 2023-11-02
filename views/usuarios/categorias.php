@@ -57,7 +57,7 @@ Impresoras Copy Estudia
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <input class="soon" type="button" value="Mas categorias proximamenente">
+        <input class="soon" type="button" value="Bodega de Inservibles">
     </div>
 </div>
 </body>

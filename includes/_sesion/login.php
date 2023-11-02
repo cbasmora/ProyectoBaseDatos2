@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="../../css/login.css">
+        <link rel="stylesheet" href="../../css/login.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,7 +18,8 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center">Login</h3>
+                        <center><img src="http://localhost/ProyectoBaseDatos/img/login.GIF" width="300px" height="120 px"></center>
+                            <h3 class="text-center"></h3>
                             <div class="form-group">
                                 <label for="username">Usuario:</label><br>
                                 <input type="text" name="correo" id="correo" class="form-control" required>
