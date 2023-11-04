@@ -1,4 +1,4 @@
-.catelectronico {
+.catComputador_Mesa {
     background: #05e3be;
     color: #5a5c69;
     font-weight: bold;
@@ -11,7 +11,7 @@
     display: inline-block;
     
     }
-    .catcocina {
+    .catComputador_Portátil {
     background: #c2b7f2;
     color: #5a5c69;
     font-weight: bold;
@@ -24,7 +24,7 @@
     display: inline-block;
     
     }
-    .catfarmaceutico {
+    .catCámaras {
     background: #C9F2B7;
     color: #5a5c69;
     font-weight: bold;
@@ -36,7 +36,7 @@
     margin: 20px;
     display: inline-block;
     }
-    .catjugueteria {
+    .catAntenas_Wifi {
     background: #f9bd93;
     color: #5a5c69;
     font-weight: bold;
@@ -49,7 +49,7 @@
     display: inline-block;
     
     }
-    .catmascotas
+    .catTeléfonos_VoIP
     {
     background: #fbf4136b;
     color: #5a5c69;
@@ -62,7 +62,7 @@
     margin: 20px;   
     display: inline-block;
     }
-    .catautomovilstico {
+    .catServidores {
     background: #5a5c698c;
     color: #5a5c69;
     font-weight: bold;
@@ -75,7 +75,7 @@
     display: inline-block;
     
     }
-    .catvestimenta {
+    .catImpresoras {
     background: #7f8bb9;
     color: #5a5c69;
     font-weight: bold;
@@ -88,7 +88,7 @@
     display: inline-block;
     
     }
-    .cattelefonia {
+    .catOtros {
         background: #b7ccf2;
         color: #5a5c69;
         font-weight: bold;
@@ -101,7 +101,7 @@
         display: inline-block;
     
     }
-    .catdeportes {
+    .catBodega {
     background: #eff2b7;
     color: #5a5c69;
     font-weight: bold;
@@ -131,30 +131,30 @@
     
     }
     /* colores para tabla */
-    .electronico {
+    .Computador_Mesa {
          font-weight: bold; padding: 15px; border-left:20px solid #05e3be;
     }
-    .cocina {
+    .Computador_Portátil {
          font-weight: bold; padding: 15px; border-left:20px solid #c2b7f2;
     }
-    .farmaceutico {
+    .Cámaras {
         font-weight: bold; padding: 15px; border-left:20px solid #C9F2B7;
     }
-    .mascotas {
+    .Teléfonos_VoIP {
         font-weight: bold; padding: 15px; border-left:20px solid #fbf4136b; 
     }
-    .jugueteria {
+    .Antenas_Wifi {
         font-weight: bold; padding: 15px; border-left:20px solid #f9bd93;
     }
-    .automovilstico {
+    .Servidores {
         font-weight: bold; padding: 15px; border-left:20px solid #5a5c698c;
     }
-    .vestimenta {
+    .Impresoras {
         font-weight: bold; padding: 15px; border-left:20px solid #7f8bb9;
     }
-    .telefonia {
+    .Otros {
         font-weight: bold; padding: 15px; border-left:20px solid #b7ccf2;
     }
-    .deportes {
+    .Bodega {
         font-weight: bold; padding: 15px; border-left:20px solid #eff2b7;
     }

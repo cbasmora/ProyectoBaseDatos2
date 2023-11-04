@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="container">
@@ -21,7 +22,7 @@
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="correo" class="form-label">Correo electronico *</label>
+<label for="correo" class="form-label">Correo Computador_Mesa *</label>
 <input type="email"  id="correo" name="correo" class="form-control">
 </div>
 </div>

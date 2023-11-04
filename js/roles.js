@@ -70,11 +70,11 @@ function selectData(respuesta = '') {
         .then((res) => res.json())
         .then((response) => {
             $('#nombre').val(response.nombre);
-            $('#descripcion').val(response.descripcion);
-            $('#color').val(response.color);
-            $('#precio').val(response.precio);
-            $('#cantidad').val(response.cantidad);
-            $('#cantidad_min').val(response.cantidad_min);
+            $('#direccion_ip').val(response.direccion_ip);
+            $('#direccion_mac').val(response.direccion_mac);
+            $('#ubicacion').val(response.ubicacion);
+            $('#responsable').val(response.responsable);
+            $('#numero_serial').val(response.numero_serial);
             $('#categorias').val(response.categorias);
             console.log(response)})
         }

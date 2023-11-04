@@ -32,7 +32,7 @@ value="<?php echo $usuario ['nombre']; ?>">
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="correo" class="form-label">Correo electronico *</label>
+<label for="correo" class="form-label">Correo Computador_Mesa *</label>
 <input type="email"  id="correo" name="correo" class="form-control"
 value="<?php echo $usuario ['correo']; ?>">
 </div>

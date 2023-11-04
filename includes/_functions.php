@@ -40,8 +40,8 @@ function insertar_productos(){
                 
 
 
-    $consulta="INSERT INTO productos (nombre, descripcion, color, precio, cantidad, cantidad_min, categorias, imagen)
-    VALUES ('$nombre', '$descripcion', '$color', $precio, $cantidad ,$cantidad_min, '$categorias', '$imagenFin');" ;
+    $consulta="INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen)
+    VALUES ('$nombre', '$direccion_ip', '$direccion_mac', $ubicacion, $responsable ,$numero_serial, '$categorias', '$imagenFin');" ;
 
     mysqli_query($conexion, $consulta);
     
@@ -63,7 +63,7 @@ function editar_producto(){
         
         $imagenFin =mysqli_escape_string($conexion,$binariosImagen);
                 
-    $consulta="UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', color = '$color', precio = '$precio', cantidad = '$cantidad', categorias = '$categorias', imagen = '$imagenFin' WHERE id = $id";
+    $consulta="UPDATE productos SET nombre = '$nombre', direccion_ip = '$direccion_ip', direccion_mac = '$direccion_mac', ubicacion = '$ubicacion', responsable = '$responsable', categorias = '$categorias', imagen = '$imagenFin' WHERE id = $id";
 
     mysqli_query($conexion, $consulta);
     header("Location: ../views/usuarios/");

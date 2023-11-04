@@ -20,17 +20,20 @@
 
 <table class="table table-striped table-hover">
 <thead>
+
 <tr>
+<CENTER>
 <th>ID</th>
 <th>Nombre</th>
-<th>Dirección IP</th>
-<th>Ubicación</th>
+<th>IP</th>
+<th>MAC</th>
+<th>Ubicacion</th>
 <th>Responsable</th>
-<th>Cantidad</th>
-<th>Cantidad minima</th>
+<th>Número Serial</th>
 <th>Categorias</th>
-<th>Imagen</th>
-<th>Acciones</th>
+<th>Imágen</th>
+<th>Modificaciones</th>
+</CENTER>
 
 
 </tr>
@@ -60,22 +63,22 @@ if ($row['cantidad'] <= $row['cantidad_min']) {
 ?>
 <style>
       .problema{
-        background-color: <?php echo $color?>;
-        color: #000000;
+        background-direccion_mac: <?php echo $direccion_mac?>;
+        direccion_mac: #000000;
     }
 </style>
 <!-- empieza la tabla-->
 <tr>
 <td <?php echo  'class="'.$row['categorias'] .'"'; ?>><?php echo $row['id']; ?></td>
 <td><?php echo $row['nombre']; ?></td>
-<td><?php echo $row['descripcion']; ?></td>
-<td><?php echo $row['color']; ?></td>
-<td><?php echo $row['precio']; ?>$</td>
+<td><?php echo $row['direccion_ip']; ?></td>
+<td><?php echo $row['direccion_mac']; ?></td>
+<td><?php echo $row['ubicacion']; ?></td>
 
 
 
-<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $row['cantidad']; ?></td>
-<td><?php echo $row['cantidad_min']; ?></td>
+<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $row['responsable']; ?></td>
+<td><?php echo $row['numero_serial']; ?></td>
 
 
 <td><?php echo $row['categorias']; ?></td>

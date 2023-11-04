@@ -12,11 +12,7 @@ function selectData(respuesta){
        let html = ``;
 
        response.map(function(i){
-                            if (i.cantidad <= i.cantidad_min){
-                                var color = 'colorout';
-                            } else{
-                                color = '#fffff';
-                            }
+                            
 
 
                 datosTabla = i;
@@ -25,11 +21,11 @@ function selectData(respuesta){
            html += `    <tr> 
                         <td class="${datosTabla.categorias}">${datosTabla.id}</td>
                         <td>${datosTabla.nombre}</td>
-                        <td>${datosTabla.descripcion}</td>
+                        <td>${datosTabla.direccion_ip}</td>
                         <td>${datosTabla.color}</td>
-                        <td>${datosTabla.precio}$</td>
-                        <td class="${color}" >${datosTabla.cantidad}</td>
-                        <td>${datosTabla.cantidad_min}</td>
+                        <td>${datosTabla.ubicacion}$</td>
+                        <td>${datosTabla.responsable}</td>
+                        <td>${datosTabla.numero_serial}</td>
                         <td>${datosTabla.categorias}</td>
                         <td><img width="100" src="data:image;base64,${datosTabla.imagen}" ></td>
                         <td>
@@ -115,11 +111,11 @@ if(confirmacion){
 .then((res) => res.json())
 .then((response) => {
     $('#nombre').val(response.nombre);
-    $('#descripcion').val(response.descripcion);
-    $('#color').val(response.color);
-    $('#precio').val(response.precio);
-    $('#cantidad').val(response.cantidad);
-    $('#cantidad_min').val(response.cantidad_min);
+    $('#direccion_ip').val(response.direccion_ip);
+    $('#direccion_mac').val(response.color);
+    $('#ubicacion').val(response.ubicacion);
+    $('#responsable').val(response.responsable);
+    $('#numero_serial').val(response.numero_serial);
     $('#categorias').val(response.categorias);
     console.log(response)})
 }

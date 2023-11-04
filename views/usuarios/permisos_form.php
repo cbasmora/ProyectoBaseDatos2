@@ -15,8 +15,8 @@
 
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="descripcion" class="form-label">Descripcion *</label>
-<input type="text"  id="descripcion" name="descripcion" class="form-control" required >
+<label for="direccion_ip" class="form-label">direccion_ip *</label>
+<input type="text"  id="direccion_ip" name="direccion_ip" class="form-control" required >
 </div>
 </div>
 </div>

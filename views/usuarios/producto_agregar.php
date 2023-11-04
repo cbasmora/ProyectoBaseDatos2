@@ -11,15 +11,15 @@
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="nombre" class="form-label">Nombre *</label>
+<label for="nombre" class="form-label">Nombre del Equipo *</label>
 <input type="text"  id="nombre" name="nombre" class="form-control" required>
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="descripcion" class="form-label">Descripcion *</label>
-<input type="text"  id="descripcion" name="descripcion" class="form-control" required >
+<label for="direccion_ip" class="form-label">Dirección IP *</label>
+<input type="text"  id="direccion_ip" name="direccion_ip" class="form-control" required >
 </div>
 </div>
 </div>
@@ -27,15 +27,15 @@
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="color" class="form-label">Color *</label>
-<input type="text"  id="color" name="color" class="form-control" required>
+<label for="direccion_mac" class="form-label">Dirección MAC *</label>
+<input type="text"  id="direccion_mac" name="direccion_mac" class="form-control" required>
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="precio" class="form-label">Precio *</label>
-<input type="number"  id="precio" name="precio" class="form-control" required>
+<label for="ubicacion" class="form-label">Ubicacion del Equipo *</label>
+<input type="string"  id="ubicacion" name="ubicacion" class="form-control" required>
 </div>
 </div>
 </div>
@@ -43,16 +43,16 @@
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="cantidad" class="form-label">Cantidad *</label>
-<input type="number"  id="cantidad" name="cantidad" class="form-control" required>
+<label for="responsable" class="form-label">Responsable *</label>
+<input type="string"  id="responsable" name="responsable" class="form-control" required>
 </div>
 </div>
 
 <div class="col-sm-6">
 
 <div class="mb-3">
-<label for="cantidad" class="form-label">Cantidad minima *</label>
-<input type="number"  id="cantidad_min" name="cantidad_min" class="form-control" required> 
+<label for="responsable" class="form-label">Número Serial *</label>
+<input type="string"  id="numero_serial" name="numero_serial" class="form-control" required> 
 </div>
 
 
@@ -63,15 +63,15 @@
     <div class="mb-3">
 <label for="categorias" class="form-label">Categorias *</label>
 <select name="categorias" id="categorias" class="form-control" required>
-    <option value="electronico">electronico</option>
-    <option value="cocina">cocina</option>
-    <option value="farmaceutico">farmaceutico</option>
-    <option value="mascotas">mascotas</option>
-    <option value="jugueteria">jugueteria</option>
-    <option value="automovilstico">automovilstico</option>
-    <option value="vestimenta">vestimenta</option>
-    <option value="telefonia">telefonia</option>
-    <option value="deportes">deportes</option>
+    <option value="Computador_Mesa">Computador_Mesa</option>
+    <option value="Computador_Portátil">Computador_Portátil</option>
+    <option value="Cámaras">Cámaras</option>
+    <option value="Teléfonos_VoIP">Teléfonos_VoIP</option>
+    <option value="Antenas_Wifi">Antenas_Wifi</option>
+    <option value="Servidores">Servidores</option>
+    <option value="Impresoras">Impresoras</option>
+    <option value="Otros">Otros</option>
+    <option value="Bodega">Bodega</option>
 
   </select>
     </div>   
