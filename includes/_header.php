@@ -53,7 +53,7 @@ if($actualsesion == null || $actualsesion == ''){
 <li class="nav-item">
     <a class="nav-link collapsed" href="categorias.php">
         <span class="material-icons">category</span>
-        <span>  Categorias</span>
+        <span>Categorias</span>
     </a>
 </li>
 <hr class="sidebar-divider">
@@ -80,7 +80,7 @@ if($actualsesion == null || $actualsesion == ''){
 </div>
 </ul>
 <!-- EMPIEZA EL NAVBAR -->
-       <div id="content-wrapper" class="d-flex flex-column">
+       <div id="content-wrapper" class="d-flex flex-column" width="100%">
         <div id="content">
                 <nav class="navbar navbar-expand navbar-dark bg-dark topbar static-top shadow">
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

@@ -4,7 +4,7 @@
 <?php require '../../includes/_header.php' ?>
 <img src="http://localhost/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<div id= "content">
+<div id="content">
         <section>
         <div class="container mt-5">
     
@@ -49,24 +49,7 @@ if($productos -> num_rows > 0){
 foreach($productos as $key => $row ){
 ?>
 <!--funcion y estilos para celdas en error-->
-<?php
 
-if ($row['cantidad'] <= $row['cantidad_min']) {
-  $color = '#F78E8E';
-  $clase = 'problema';
-} else {
-  $clase = 'correcto';
-}
- 
-// ...
-
-?>
-<style>
-      .problema{
-        background-direccion_mac: <?php echo $direccion_mac?>;
-        direccion_mac: #000000;
-    }
-</style>
 <!-- empieza la tabla-->
 <tr>
 <td <?php echo  'class="'.$row['categorias'] .'"'; ?>><?php echo $row['id']; ?></td>
@@ -131,4 +114,4 @@ if ($row['cantidad'] <= $row['cantidad_min']) {
         </section>
     </div>
     <?php require '../../includes/_footer.php' ?>
-</html
+</html>

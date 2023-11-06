@@ -41,7 +41,7 @@ function insertar_productos(){
 
 
     $consulta="INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen)
-    VALUES ('$nombre', '$direccion_ip', '$direccion_mac', $ubicacion, $responsable ,$numero_serial, '$categorias', '$imagenFin');" ;
+    VALUES ('$nombre', '$direccion_ip', '$direccion_mac', '$ubicacion', '$responsable' ,'$numero_serial', '$categorias', '$imagenFin');" ;
 
     mysqli_query($conexion, $consulta);
     

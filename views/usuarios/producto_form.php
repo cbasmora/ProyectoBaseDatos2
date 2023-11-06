@@ -30,7 +30,7 @@
 <div class="col-sm-6">
 <div class="mb-3">
 <label for="ubicacion" class="form-label">ubicacion *</label>
-<input type="string"  id="ubicacion" name="ubicacion" class="form-control" required>
+<input type="text"  id="ubicacion" name="ubicacion" class="form-control" required>
 </div>
 </div>
 </div>
@@ -39,7 +39,7 @@
 <div class="col-sm-6">
 <div class="mb-3">
 <label for="responsable" class="form-label">responsable *</label>
-<input type="string"  id="responsable" name="responsable" class="form-control" required>
+<input type="text"  id="responsable" name="responsable" class="form-control" required>
 </div>
 </div>
 
@@ -47,7 +47,7 @@
 
 <div class="mb-3">
 <label for="responsable" class="form-label">responsable minima *</label>
-<input type="string"  id="numero_serial" name="numero_serial" class="form-control" required> 
+<input type="text"  id="numero_serial" name="numero_serial" class="form-control" required> 
 </div>
 
 

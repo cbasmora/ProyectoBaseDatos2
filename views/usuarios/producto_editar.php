@@ -45,7 +45,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="col-sm-6">
 <div class="mb-3">
 <label for="ubicacion" class="form-label">ubicacion del equipo *</label>
-<input type="string"  id="ubicacion" name="ubicacion"  value="<?php echo $productos ['ubicacion']; ?>" class="form-control" required>
+<input type="text"  id="ubicacion" name="ubicacion"  value="<?php echo $productos ['ubicacion']; ?>" class="form-control" required>
 </div>
 </div>
 </div>
@@ -54,7 +54,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="col-sm-6">
 <div class="mb-3">
 <label for="responsable" class="form-label">Responsable *</label>
-<input type="string"  id="responsable" name="responsable"  value="<?php echo $productos ['responsable']; ?>" class="form-control" required>
+<input type="text"  id="responsable" name="responsable"  value="<?php echo $productos ['responsable']; ?>" class="form-control" required>
 </div>
 </div>
 
@@ -62,7 +62,7 @@ $productos = mysqli_fetch_assoc($resultado);
 
 <div class="mb-3">
 <label for="responsable" class="form-label">Número Serial *</label>
-<input type="string"  id="cantidamin" name="responsablemin" value="<?php echo $productos ['responsable']; ?>" class="form-control" required>
+<input type="text"  id="cantidamin" name="responsablemin" value="<?php echo $productos ['responsable']; ?>" class="form-control" required>
 </div>
 
 
