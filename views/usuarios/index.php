@@ -15,7 +15,18 @@
 
 </div>
 <div class="col-sm-12">
+<div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                <span class="material-icons">search</span>
+                                </button>
+                            </div>
+                        </div>
 <div class="table-responsive">
+
+
 
 
 <table class="table table-striped table-hover">
@@ -66,7 +77,7 @@ foreach($productos as $key => $row ){
 
 <td><?php echo $row['categorias']; ?></td>
 <td><img width="100" src="data:image;base64,<?php echo base64_encode($row['imagen']);  ?>" ></td>
-
+<script src="script.js"></script>
 <td>
   <a href="producto_editar.php?id=<?php echo $row['id']?>">
     <div">
@@ -96,6 +107,25 @@ foreach($productos as $key => $row ){
 
     <?php
 }?>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.querySelector(".form-control");
+    const rows = document.querySelectorAll("tbody tr");
+
+    searchInput.addEventListener("input", function() {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      rows.forEach(row => {
+        const rowData = Array.from(row.children).map(cell => cell.textContent.toLowerCase());
+        if (rowData.some(data => data.includes(searchTerm))) {
+          row.classList.remove("hidden");
+        } else {
+          row.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
 </tbody>
 
 </table>

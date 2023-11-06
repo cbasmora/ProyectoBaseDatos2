@@ -2,7 +2,9 @@
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
+<img src="http://localhost/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
 <body>
+
     <div class="row">
         <div class="col-sm-4">
 <a class="catComputador_Mesa" href="productosCategoria.php?categoria=<?php echo 'Computador_Mesa'?>">
