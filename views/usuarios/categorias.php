@@ -5,7 +5,7 @@
 <body>
 
     <div class="row">
-    <img src="http://localhost/ProyectoBaseDatos/img/categorias.svg" width="100%" alt="Título de la página">
+    <img src="http://192.168.1.150/ProyectoBaseDatos/img/categorias.svg" width="100%" alt="Título de la página">
         <div class="col-sm-4">
 <a class="catComputador_Mesa" href="productosCategoria.php?categoria=<?php echo 'Computador_Mesa'?>">
 Computador de Mesa

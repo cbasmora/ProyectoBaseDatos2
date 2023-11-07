@@ -13,7 +13,7 @@ if($actualsesion == null || $actualsesion == ''){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Base de datos</title>
+    <title>Inventario</title>
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -31,7 +31,7 @@ if($actualsesion == null || $actualsesion == ''){
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
     <div class="sidebar-brand-icon rotate-n-15">
     </div>
-    <div class="sidebar-brand-text mx-3"><img src="http://localhost/ProyectoBaseDatos/img/logo.png" width="100%" alt="Título de la página"></div>
+    <div class="sidebar-brand-text mx-3"><img src="http://192.168.1.150/ProyectoBaseDatos/img/logo.png" width="100%" alt="Título de la página"></div>
 </a>
 <hr class="sidebar-divider my-0">
 <li class="nav-item active">
