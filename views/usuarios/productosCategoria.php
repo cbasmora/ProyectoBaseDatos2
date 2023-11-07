@@ -2,6 +2,7 @@
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <body>
 
 <div id= "content">
@@ -9,8 +10,8 @@
         <div class="container mt-5">
 <div class="row">
 <div class="col-sm-12 mb-3">
-<center><h1>Productos</h1></center>
-<a href="producto_agregar.php"><input  class="btn btn-primary" type="button" value="Agregar producto"></a>
+<img src="http://localhost/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
+<a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
 </div>
 <div class="col-sm-12">
 <div class="table-responsive">
@@ -21,15 +22,15 @@
 
 <tr>
 <th>ID</th>
-<th></th>
-<th>direccion_ip</th>
-<th>direccion_mac</th>
-<th>ubicacion</th>
-<th>responsable</th>
-<th>responsable minima</th>
-<th>Categoría</th>
-<th>Imagen</th>
-<th>Acciones</th>
+<th>Nombre</th>
+<th>IP</th>
+<th>MAC</th>
+<th>Ubicación</th>
+<th>Responsable</th>
+<th>Numero_Serial</th>
+<th>Categorias</th>
+<th>Imágen</th>
+<th>Modificaciones</th>
 
 
 </tr>
@@ -60,14 +61,15 @@ foreach($productos as $key => $row ){
 
 <td>
   <a href="producto_editar.php?id=<?php echo $row['id']?>">
-    <div">
-      Editar
+  <div">
+    <button type="submit" class="btn btn-primary">
+    <i class="fas fa-pencil-alt"></i></button>
     </div>
   </a>
   <a>|</a>
   <a href="producto_eliminar.php?id=<?php echo $row['id']?>">
     <div">
-    Eliminar
+    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
     </div>
   </a>
 </td>

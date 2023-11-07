@@ -21,7 +21,7 @@
     </div>
     
   <div class="text-center bd-dark">
-    © 2023 Copyright: Todos los Derechos Reservados Meintegral S.A.S Desarrollador por Jhon Sebastian Mora Agudelo
+    © 2023 Copyright: Todos los Derechos Reservados Meintegral S.A.S Desarrollador Jhon Sebastian Mora Agudelo
   </div>
   </section>
 

@@ -1,133 +1,128 @@
 .catComputador_Mesa {
     background: #05e3be;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;
     display: inline-block;
-    
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
+
     }
     .catComputador_Portátil {
     background: #c2b7f2;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     }
     .catCámaras {
     background: #C9F2B7;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     }
     .catAntenas_Wifi {
     background: #f9bd93;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     }
     .catTeléfonos_VoIP
     {
-    background: #fbf4136b;
+    background: #fbf31352;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;   
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
+
     }
     .catServidores {
     background: #5a5c698c;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;  
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     }
     .catImpresoras {
     background: #7f8bb9;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;  
     display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     }
     .catOtros {
         background: #b7ccf2;
         color: #5a5c69;
-        font-weight: bold;
         padding: 15px;
-        border: 2px solid #5a5c69;
+        border: 1px solid #5a5c69;
         border-radius: 6px;
         text-align:center;
         width: 90%;
         margin: 20px;   
         display: inline-block;
+        font-size: 20px;
+        text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     }
     .catBodega {
     background: #eff2b7;
     color: #5a5c69;
-    font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
+    border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
     width: 90%;
     margin: 20px;  
     display: inline-block;
-    display: inline-block;
+    font-size: 20px;
+    text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
-    
-    }
-    .soon 
-    {
-        background: #eff2b7;
-    color: #5a5c69;
-    font-weight: bold;
-    padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
-    text-align:center;
-    width: 97%;
-    margin: 20px; 
-    display: inline-block;
     
     }
     /* colores para tabla */
@@ -158,3 +153,13 @@
     .Bodega {
         font-weight: bold; padding: 15px; border-left:20px solid #eff2b7;
     }
+/* Cambia el color de fondo cuando el cursor está sobre el botón */
+.catComputador_Mesa:hover {background-color: #049c928a;}
+.catComputador_Portátil:hover {background-color: #a398e4 ;}
+.catCámaras:hover {background-color: #B3E782;}
+.catAntenas_Wifi:hover {background-color: #e6a17b;}
+.catTeléfonos_VoIP:hover { background-color: #d8d100a8;}
+.catServidores:hover {background-color:#4a4c58af;}
+.catImpresoras:hover {background-color:#6e79a3;}
+.catOtros:hover {background-color:#a3b7e6;}
+.catBodega:hover {background-color:#d9dd98;}

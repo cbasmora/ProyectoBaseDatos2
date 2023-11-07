@@ -80,7 +80,7 @@ if($actualsesion == null || $actualsesion == ''){
 </div>
 </ul>
 <!-- EMPIEZA EL NAVBAR -->
-       <div id="content-wrapper" class="d-flex flex-column" width="100%">
+       <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
 
 

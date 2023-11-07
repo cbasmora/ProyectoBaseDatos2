@@ -2,15 +2,13 @@
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
-<img src="http://localhost/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <div id="content">
         <section>
         <div class="container mt-5">
-    
-
-<div class="row">
+        <div class="row">
 <div class="col-sm-12 mb-3">
+<img src="http://localhost/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
 <a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
 
 </div>
@@ -38,7 +36,7 @@
 <th>Nombre</th>
 <th>IP</th>
 <th>MAC</th>
-<th>Ubicacion</th>
+<th>Ubicación</th>
 <th>Responsable</th>
 <th>Número Serial</th>
 <th>Categorias</th>
@@ -82,8 +80,7 @@ foreach($productos as $key => $row ){
   <a href="producto_editar.php?id=<?php echo $row['id']?>">
     <div">
     <button type="submit" class="btn btn-primary">
-    <i class="fas fa-pencil-alt"></i>
-</button>
+    <i class="fas fa-pencil-alt"></i></button>
     </div>
   </a>
   <a>|</a>

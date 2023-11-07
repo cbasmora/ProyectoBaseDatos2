@@ -61,8 +61,8 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="col-sm-6">
 
 <div class="mb-3">
-<label for="responsable" class="form-label">Número Serial *</label>
-<input type="text"  id="cantidamin" name="responsablemin" value="<?php echo $productos ['responsable']; ?>" class="form-control" required>
+<label for="numero_serial" class="form-label">Número Serial *</label>
+<input type="text"  id="numero_serial" name="numero_serial" value="<?php echo $productos ['numero_serial']; ?>" class="form-control" required>
 </div>
 
 
@@ -91,12 +91,12 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="row">
         <div class="col-sm-12">
             <div class="form-group">
-                <input type="file" class="form-control-file"  name="foto" id="foto" required>
+                <input type="file" class="form-control-file"  name="foto" id="foto">
             </div>
         </div>
     </div>
 </div>
-
+<center><img width="200px" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /><br><p>Imagen actual</p></center>
 <div class="mb-3">
 <input type="hidden" name="accion" value="editar_producto">
 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
