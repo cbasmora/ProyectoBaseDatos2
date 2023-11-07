@@ -72,16 +72,6 @@
     </div>   
 </div>
 </div>
-<!-- <div class="mb-3">
-<div class="row">
-        <div class="col-sm-12">
-            <div class="form-group">
-                <input type="file" class="form-control-file" name="foto" id="foto" required>
-            </div>
-        </div>
-    </div> 
-</div> -->
-
 <div class="mb-3">
 <a href="index.php"><button type = "button" id="btnSubmit" class="btn btn-success">Guardar</button>
 </div>

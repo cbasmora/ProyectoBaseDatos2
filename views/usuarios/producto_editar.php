@@ -96,7 +96,7 @@ $productos = mysqli_fetch_assoc($resultado);
         </div>
     </div>
 </div>
-<center><img width="200px" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /><br><p>Imagen actual</p></center>
+<center><img width="200px" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /><br><p><em>(Imagen actual)</em></p></center>
 <div class="mb-3">
 <input type="hidden" name="accion" value="editar_producto">
 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
