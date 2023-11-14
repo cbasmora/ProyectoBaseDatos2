@@ -67,6 +67,10 @@
     <option value="Impresoras">Impresoras</option>
     <option value="Otros">Otros</option>
     <option value="Bodega">Bodega</option>
+    <option value="Computador_Allinone">Computador_Allinone</option>
+    <option value="Computador_Cabina">Computador_Cabina</option>
+    <option value="Bodega_Inservible">Bodega Inservible</option>
+
 
   </select>
     </div>   

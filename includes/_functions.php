@@ -27,7 +27,16 @@ function insertar_productos(){
     global $conexion;
     extract($_POST);
 
-
+// Verificar si el nombre ya existe
+    if (nombreExiste($nombre)) {
+        $response = array(
+            'type' => 'error',
+            'title' => 'Error',
+            'text' => 'EL NOMBRE YA EXISTE EN LA BASE DE DATOS.'
+        );
+        echo json_encode($response);
+        exit();
+    }
         //variables donde se almacenan los valores de nuestra imagen
                 $tamanoArchvio=$_FILES['foto']['size'];
     
@@ -51,6 +60,17 @@ function insertar_productos(){
 function editar_producto(){
     global $conexion;
     extract($_POST);
+
+    // Verificar si el nombre ya existe
+    if (nombreExiste($nombre, $id)) {
+        $response = array(
+            'type' => 'error',
+            'title' => 'Error',
+            'text' => 'EL NOMBRE YA EXISTE EN LA BASE DE DATOS.'
+        );
+        echo json_encode($response);
+        exit();
+    }
 
     // Verifica si se ha subido una nueva imagen
     if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
@@ -77,5 +97,23 @@ function eliminar_producto(){
     $consulta = "DELETE FROM productos WHERE id = $id";
     mysqli_query($conexion, $consulta);
     header("Location: ../views/usuarios/");
+}
+// Función para verificar si el nombre ya existe
+function nombreExiste($nombre, $id = null)
+{
+    global $conexion;
+
+    // Realizar la consulta en la base de datos
+    $query = "SELECT COUNT(*) as count FROM productos WHERE nombre = '$nombre'";
+
+    // Si se está editando un producto, excluye el producto actual de la verificación
+    if ($id !== null) {
+        $query .= " AND id != $id";
+    }
+
+    $result = mysqli_query($conexion, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    return $row['count'] > 0;
 }
 ?>

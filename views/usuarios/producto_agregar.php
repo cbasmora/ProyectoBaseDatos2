@@ -65,6 +65,8 @@
 <select name="categorias" id="categorias" class="form-control" required>
     <option value="Computador_Mesa">Computador_Mesa</option>
     <option value="Computador_Portátil">Computador_Portátil</option>
+    <option value="Computador_Allinone">Computador_Allinone</option>
+    <option value="Computador_Cabina">Computador_Cabina</option>
     <option value="Cámaras">Cámaras</option>
     <option value="Teléfonos_VoIP">Teléfonos_VoIP</option>
     <option value="Antenas_Wifi">Antenas_Wifi</option>
@@ -72,6 +74,9 @@
     <option value="Impresoras">Impresoras</option>
     <option value="Otros">Otros</option>
     <option value="Bodega">Bodega</option>
+    <option value="Bodega_Inservible">Bodega Inservible</option>
+
+
 
   </select>
     </div>   

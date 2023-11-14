@@ -1,10 +1,11 @@
 .catComputador_Mesa {
-    background: #05e3be;
-    color: #5a5c69;
+    color:  black;
+    background: linear-gradient(to left, #cfcfcf 95%, #7cc750 10%);
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
+    justify-content: center;
     width: 90%;
     margin: 20px;
     display: inline-block;
@@ -13,8 +14,8 @@
 
     }
     .catComputador_Portátil {
-    background: #c2b7f2;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%,#69ab6e 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -27,8 +28,8 @@
     
     }
     .catCámaras {
-    background: #C9F2B7;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #C9F2B7 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -40,8 +41,8 @@
     text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     }
     .catAntenas_Wifi {
-    background: #f9bd93;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #f9bd93 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -55,8 +56,8 @@
     }
     .catTeléfonos_VoIP
     {
-    background: #fbf31352;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #d8231c 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -69,8 +70,8 @@
 
     }
     .catServidores {
-    background: #5a5c698c;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #c6158a 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -83,8 +84,8 @@
     
     }
     .catImpresoras {
-    background: #7f8bb9;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #7f8bb9 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -97,8 +98,8 @@
     
     }
     .catOtros {
-        background: #b7ccf2;
-        color: #5a5c69;
+        color:  black;
+        background: linear-gradient(to left, #cfcfcf 95%, #b7ccf2 10%);
         padding: 15px;
         border: 1px solid #5a5c69;
         border-radius: 6px;
@@ -111,8 +112,8 @@
     
     }
     .catBodega {
-    background: #eff2b7;
-    color: #5a5c69;
+    background: linear-gradient(to left, #cfcfcf 95%, #eff2b7 10%);
+    color:  black;
     padding: 15px;
     border: 1px solid #5a5c69;
     border-radius: 6px;
@@ -122,27 +123,70 @@
     display: inline-block;
     font-size: 20px;
     text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
+    }
+    .catComputador_Allinone {
+        background: linear-gradient(to left, #cfcfcf 95%, #d2ce2f 10%);
+        color:  black;
+        padding: 15px;
+        border: 1px solid #5a5c69;
+        border-radius: 6px;
+        text-align:center;
+        width: 90%;
+        margin: 20px;  
+        display: inline-block;
+        font-size: 20px;
+        text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
+           
+    
+    }
+    .catComputador_Cabina {
+        background: linear-gradient(to left, #cfcfcf 95%, #ffa43e 10%);
+        color:  black !important; 
+        padding: 15px;
+        border: 1px solid #5a5c69;
+        border-radius: 6px;
+        text-align:center;
+        width: 90%;
+        margin: 20px;  
+        display: inline-block;
+        font-size: 20px;
+        text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
     
     
     }
-    /* colores para tabla */
+    .catBodega_Inservible {
+        background: #a09a88;
+        color:  black;
+        padding: 15px;
+        border: 1px solid #5a5c69;
+        border-radius: 6px;
+        text-align:center;
+        width: 90%;
+        margin: 20px;  
+        display: inline-block;
+        font-size: 20px;
+        text-decoration: none !important; /* Elimina el subrayado de enlace en hover */
+    
+    
+    }
+    /* colores para tabla de inicio */
     .Computador_Mesa {
-         font-weight: bold; padding: 15px; border-left:20px solid #05e3be;
+         font-weight: bold; padding: 15px; border-left:20px solid #7cc750;
     }
     .Computador_Portátil {
-         font-weight: bold; padding: 15px; border-left:20px solid #c2b7f2;
+         font-weight: bold; padding: 15px; border-left:20px solid #69ab6e;
     }
     .Cámaras {
         font-weight: bold; padding: 15px; border-left:20px solid #C9F2B7;
     }
     .Teléfonos_VoIP {
-        font-weight: bold; padding: 15px; border-left:20px solid #fbf4136b; 
+        font-weight: bold; padding: 15px; border-left:20px solid #d8231c;
     }
     .Antenas_Wifi {
         font-weight: bold; padding: 15px; border-left:20px solid #f9bd93;
     }
     .Servidores {
-        font-weight: bold; padding: 15px; border-left:20px solid #5a5c698c;
+        font-weight: bold; padding: 15px; border-left:20px solid #c6158a;
     }
     .Impresoras {
         font-weight: bold; padding: 15px; border-left:20px solid #7f8bb9;
@@ -153,13 +197,33 @@
     .Bodega {
         font-weight: bold; padding: 15px; border-left:20px solid #eff2b7;
     }
+    .Computador_Allinone {
+        font-weight: bold; padding: 15px; border-left:20px solid  #d2ce2f;
+    }
+    .Computador_Cabina {
+        font-weight: bold; padding: 15px; border-left:20px solid #ffa43e;
+    }
+    .Bodega_Inservible {
+        font-weight: bold; padding: 15px; border-left:20px solid #a09a88;
+    }
 /* Cambia el color de fondo cuando el cursor está sobre el botón */
-.catComputador_Mesa:hover {background-color: #049c928a;}
-.catComputador_Portátil:hover {background-color: #a398e4 ;}
-.catCámaras:hover {background-color: #B3E782;}
-.catAntenas_Wifi:hover {background-color: #e6a17b;}
-.catTeléfonos_VoIP:hover { background-color: #d8d100a8;}
-.catServidores:hover {background-color:#4a4c58af;}
-.catImpresoras:hover {background-color:#6e79a3;}
-.catOtros:hover {background-color:#a3b7e6;}
-.catBodega:hover {background-color:#d9dd98;}
+.catComputador_Mesa:hover {color: white !important; background-color:#4a4c58af;}
+.catComputador_Portátil:hover {color: white !important; background-color:#4a4c58af;}
+.catCámaras:hover {color: white !important; background-color:#4a4c58af;}
+.catAntenas_Wifi:hover {color: white !important; background-color: #4a4c58af;}
+.catTeléfonos_VoIP:hover {color: white !important; background-color:#4a4c58af;}
+.catServidores:hover {color: white !important; background-color:#4a4c58af;}
+.catImpresoras:hover {color: white !important; background-color:#4a4c58af;}
+.catOtros:hover {color: white !important; background-color:#4a4c58af;}
+.catComputador_Allinone:hover {color: white !important; background-color:#4a4c58af;}
+.catBodega:hover {color: white !important; background-color:#4a4c58af;}
+.catBodega_Inservible:hover {color: white !important; color: white !important; background-color:#4a4c58af;}
+.catComputador_Cabina:hover {color: white !important; color: white !important; background-color:#4a4c58af;}
+
+/*ACá comienzan las propiedades para todas las imagenes que se encuentran en las categorias*/
+
+.img_Computador_Mesa {
+    float: left;
+    width: 50px;
+    height: 50px;
+}

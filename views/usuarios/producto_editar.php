@@ -74,7 +74,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <label for="categorias" class="form-label">Categorias *</label>
 <select name="categorias" id="categorias" class="form-control" required>
 <?php
-                $categorias = ["Computador_Mesa", "Computador_Portátil", "Cámaras", "Teléfonos_VoIP", "Antenas_Wifi", "Servidores", "Impresoras", "Otros", "Bodega"];
+                $categorias = ["Computador_Mesa", "Computador_Portátil","Computador_Allinone", "Computador_Cabina", "Cámaras", "Teléfonos_VoIP", "Antenas_Wifi", "Servidores", "Impresoras", "Otros", "Bodega","Bodega_Inservible"];
 
                 foreach ($categorias as $categoria) {
                     $selected = ($categoria === $productos['categorias']) ? 'selected' : '';
@@ -94,7 +94,7 @@ $productos = mysqli_fetch_assoc($resultado);
         </div>
     </div>
 </div>
-<center><img width="200px" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /><br><p><em>(Imagen actual)</em></p></center>
+<center><img width="400px" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /><br><p><em>(Imagen actual)</em></p></center>
 <div class="mb-3">
 <input type="hidden" name="accion" value="editar_producto">
 <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
