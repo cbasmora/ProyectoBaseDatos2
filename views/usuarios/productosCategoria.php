@@ -10,7 +10,7 @@
         <div class="container mt-5">
 <div class="row">
 <div class="col-sm-12 mb-3">
-<img src="http://192.168.1.150/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
+<img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
 <a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
 </div>
 <div class="col-sm-12">

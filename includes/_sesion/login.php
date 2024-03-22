@@ -18,7 +18,7 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="" method="post">
-                        <center><img src="http://192.168.1.150/ProyectoBaseDatos/img/login.GIF" width="300px" height="120 px"></center>
+                        <center><img src="http://192.168.1.150/inventario-sis/img/login.GIF" width="300px" height="120 px"></center>
                             <h3 class="text-center"></h3>
                             <div class="form-group">
                                 <label for="username">Usuario:</label><br>

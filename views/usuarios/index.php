@@ -3,13 +3,17 @@
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <div id="content">
         <section>
         <div class="container mt-5">
         <div class="row">
 <div class="col-sm-12 mb-3">
-<img src="http://192.168.1.150/ProyectoBaseDatos/img/tittle.gif" width="100%" alt="Título de la página">
+<img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
 <a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
+<a href="excel.php" class="btn btn-success-2">
+    <i class="fas fa-download download-icon"></i> Descargar EXCEL
+</a>
 
 </div>
 <div class="col-sm-12">
@@ -23,10 +27,6 @@
                             </div>
                         </div>
 <div class="table-responsive">
-
-
-
-
 <table class="table table-striped table-hover">
 <thead>
 
