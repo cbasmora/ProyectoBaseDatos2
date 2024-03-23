@@ -1,0 +1,367 @@
+body {font-family: Arial, sans-serif;
+    margin: 0;
+    padding-left: 60px;
+    background-color: #f0f0f0;}
+input {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    width: 20%;
+}
+/* Estilos para el menú */
+.menu {
+
+    height: 100%; /* Altura del menú que ocupa toda la página */
+    background-color: #333; /* Color de fondo del menú */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+}
+
+#triangle {color: #ee831d;}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 5px 0;
+    width: 80%;
+}
+
+
+.encabezado-fijo {
+    height: 100%;
+    width: 100%;
+
+
+}
+.menu img#logo {
+    padding: 10%;
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente el logo */
+    width: 150px; /* Ancho del logo */
+    height: auto;}
+/* Estilos para el contenido principal */
+.menu hr {
+    border: none;
+    border-top: 2px solid rgb(204, 204, 204); /* Color y estilo de la línea que separa el logo de PACI en el menú*/
+    margin: 20px 0;
+    width: 70% ;
+
+    
+ } /* Espacio antes y después de la línea */
+.main-content {
+    width: 80%;
+    margin-left: 65px; /* Ajustar el margen izquierdo para dar espacio al menú */
+    padding: 0px ;
+}
+
+#menub {display: block;
+        background-color: #161616;
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+        font-weight: 100;
+        padding: 10px;
+        border-radius: 5px;}
+#menub:hover {background-color: #ee831d;
+    color: #000000;}
+/* Evitar que el contenido principal se solape con la barra de navegación */
+.encabezado-fijo {height: 100%;}
+
+header {background-color: rgb(204, 204, 204);
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0px;
+    height: 100%;
+    width: 100%;}
+.caja-bloqueda {
+    overflow: hidden;
+position: center;
+}
+h1  {margin: 0;}
+
+ul  {list-style:none;
+    padding: 0;}
+
+li  {margin-bottom: 10px;
+        width: 100%}
+    /* Estilo para el icono de PDF */
+ul li img {
+    width: 40%; /* Tamaño del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+
+footer {color: rgb(70, 70, 66);}
+
+#description-box{ /*espacio de la caja de descripción que aparece al seleccionar el archivo*/
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 200px;}
+
+.hidden {display: none;}
+
+td:first-child,
+th:first-child {
+    width: 30px; /* Establece el ancho deseado para la primera columna */
+}
+/* Estilos para los td */
+td {
+    overflow: hidden;
+    padding: 5px;
+    white-space: normal;
+    align-items: center;
+    text-align: center;
+}
+td:nth-child(2),
+th:nth-child(2) {
+    width: 10%; /* Establece el ancho deseado para la segunda columna */
+    word-break: break-all;
+    
+}
+/* Colorear intercaladamente en blanco y gris */
+tr:nth-child(even) td {
+    background-color: #ececec; /* Color gris claro para filas pares */
+}
+
+tr:nth-child(odd) td {
+    background-color: #ffffff
+; /* Color blanco para filas impares */
+}
+.column1 {
+    margin-bottom: 20px;
+    width: 70%; /* Porcentaje del ancho de la tabla */
+    
+}
+.column2 {
+    text-align: center;
+    margin-bottom: 80px;
+    width: 30%; /* Porcentaje del ancho de la tabla */
+}
+
+iframe {
+    
+    width: 270px;  /* Establecer el ancho al 30% del contenedor padre */
+    height: 150px; /* Establecer el alto al 20% del contenedor padre */
+}
+.video-destacado {
+    width: 80%;
+    height: 500px;
+}
+.video-container {
+    margin: 10px; /* Ajusta el valor del margen según tu preferencia */
+    border: none !important;
+    
+}
+
+
+
+#document-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+#document-list li {
+    text-align: center;
+    font-size: small;
+}
+
+#document-list li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    width: 85%;
+    height: 90%; /* Ajusta la altura según tus necesidades */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.termo {
+    height: 20px;
+    width: 20px;
+}
+#document-list li img {
+    margin-bottom: 10%;
+}
+
+.slider-container {
+    border-radius: 25;
+    padding-top: 50px;
+    overflow: hidden;
+    width: 50%;
+    margin: auto;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.fa-2x {
+font-size: 2em;
+}
+.fa {
+position: relative;
+display: table-cell !important;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle !important;
+
+}
+
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+overflow:visible;
+}
+
+.main-menu {
+background:#212121;
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+.main-menu>ul {
+margin:7px 0;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:250px;
+}
+table {
+    table-layout: auto;
+}
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#999;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+  
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+background-color: rgb(0, 0, 0);
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:#000000;
+}
+.area {
+float: left;
+background: #e2e2e2;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+.col-sm-4 {
+    width: 33.33%;
+    float: left;
+    box-sizing: full;
+    padding: 0 0px;
+}
+
+/* Limpiar el float después de cada fila */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Añadir un poco de espacio entre las columnas */
+.row [class^="col-"] {
+    margin-bottom: 20px;
+}

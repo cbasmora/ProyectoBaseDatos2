@@ -11,9 +11,9 @@ $productos = mysqli_fetch_assoc($resultado);
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
-<?php require '../../includes/_header.php' ?>
+<?php require '../../includes/_header copy.php' ?>
 <body>
-
+<img src="http://192.168.1.150/inventario-sis/img/editarequipo.png" width="100%" alt="Título de la página">
 <div class="container">
 <div class="col-sm-6 offset-3 mt-5">
 <form action="../../includes/_functions.php" method="POST"  enctype="multipart/form-data" >

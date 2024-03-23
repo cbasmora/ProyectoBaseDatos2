@@ -2,17 +2,18 @@
 require '../../includes/_db.php';
 
 $query = mysqli_query($conexion, "SELECT * FROM productos");
-$docu = "inventario.xls";
+$docu = "inventario-sis.xls";
 header('Content-Type: application/vnd.ms-excel');
 header('Content-Disposition: attachment; filename=' . $docu);
 header('Pragma: no-cache');
 header('Expires: 0');
 
+echo "\xEF\xBB\xBF";
 echo '<table border=1>';
 echo '<tr>';
-echo '<th colspan=8> Reporte de inventarios de productos </th>';
+echo '<th colspan=8>REPORTE DE INVENTARIO SISTEMAS</th>';
 echo '</tr>';
-echo '<tr><th>ID</th><th>nombre</th><th>direccion_ip</th><th>direccion_mac</th><th>ubicacion</th><th>responsable</th><th>numero_serial</th><th>categorias</th></tr>';
+echo '<tr><th>ID</th><th>NOMBRE</th><th>DIRECCIÓN IP</th><th>DIRECCIÓN MAC</th><th>UBICACIÓN</th><th>RESPONSABLE</th><th>NÚMERO SERIAL</th><th>CATEGORÍAS</th></tr>';
 while ($row = mysqli_fetch_array($query)) {
     echo '<tr>';
     echo '<td>' . $row['id'] . '</td>';

@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
-<?php require '../../includes/_header.php' ?>
+<?php require '../../includes/_header copy.php' ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <body>
-
-<div id= "content">
-        <section>
-        <div class="container mt-5">
-<div class="row">
-<div class="col-sm-12 mb-3">
 <img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
+<br>
+<br>
 <a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
 </div>
 <div class="col-sm-12">

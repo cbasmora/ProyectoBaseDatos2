@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
-<?php require '../../includes/_header.php' ?>
+<?php require '../../includes/_header copy.php' ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <body>
-    <div class="row">
+        <tr>
+    <td><div class="row">
     <img src="http://192.168.1.150/inventario-sis/img/categorias.svg" width="100%" alt="Título de la página">
         <div class="col-sm-4">
 <a class="catComputador_Mesa" href="productosCategoria.php?categoria=<?php echo 'Computador_Mesa'?>">
 <img class="img_Computador_Mesa" src="http://192.168.1.150/inventario-sis/img/computador_Mesa.svg">
 Computador de Mesa
 </a>
+</td>
         </div>
 <div class="col-sm-4">
 <a class="catComputador_Portátil" href="productosCategoria.php?categoria=<?php echo 'Computador_Portátil'?>">
@@ -24,6 +28,7 @@ Computador Todo en Uno
 </a>
 </div>  
 </div>
+</tr>
 <div class="row">
 <div class="col-sm-4">
 <a class="catComputador_Cabina" href="productosCategoria.php?categoria=<?php echo 'Computador_Cabina'?>">

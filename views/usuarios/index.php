@@ -1,37 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
-<?php require '../../includes/_header.php' ?>
+<?php require '../../includes/_header copy.php' ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<div id="content">
-        <section>
-        <div class="container mt-5">
-        <div class="row">
-<div class="col-sm-12 mb-3">
 <img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
-<a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>
-<a href="excel.php" class="btn btn-success-2">
-    <i class="fas fa-download download-icon"></i> Descargar EXCEL
+<br>
+<a href="producto_agregar.php" class="btn btn-success">
+    <i class="fas fa-plus"></i> Agregar equipo
 </a>
+
 
 </div>
 <div class="col-sm-12">
 <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                <span class="material-icons">search</span>
-                                </button>
-                            </div>
-                        </div>
+                            <CENTER><input type="text" class="form-control bg-light border-0 small" placeholder="Buscar en el inventario..."
+                                aria-label="Search" aria-describedby="basic-addon2"></CENTER>
 <div class="table-responsive">
 <table class="table table-striped table-hover">
 <thead>
 
 <tr>
-<CENTER>
 <th>ID</th>
 <th>Nombre</th>
 <th>IP</th>
@@ -42,7 +30,6 @@
 <th>Categorias</th>
 <th>Imágen</th>
 <th>Modificaciones</th>
-</CENTER>
 
 
 </tr>
@@ -77,18 +64,23 @@ foreach($productos as $key => $row ){
 <td><img width="100" src="data:image;base64,<?php echo base64_encode($row['imagen']);  ?>" ></td>
 <script src="script.js"></script>
 <td>
+<a href="producto_descripcion.php?id=<?php echo $row['id']?>">
+    <div">
+    <button type="submit" class="btn btn-secondary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+    </div>
+  </a>
   <a href="producto_editar.php?id=<?php echo $row['id']?>">
     <div">
     <button type="submit" class="btn btn-primary">
     <i class="fas fa-pencil-alt"></i></button>
     </div>
   </a>
-  <a>|</a>
   <a href="producto_eliminar.php?id=<?php echo $row['id']?>">
     <div">
     <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
     </div>
   </a>
+
 </td>
 </tr>
 
