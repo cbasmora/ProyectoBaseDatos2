@@ -74,40 +74,74 @@ if ($resultado->num_rows > 0) {
     $producto = $resultado->fetch_assoc();
 
     // Mostrar los datos del producto en la tabla
-    $pdf->SetX(80);
-    $pdf->SetFont('Arial', '', 12);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->SetFillColor(181, 249, 255); //color de la celda azul//
 
-    $pdf->Cell(40, 10, utf8_decode('ID'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['id']), 1, 'C', 0);
 
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Nombre'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['nombre']), 1, 'C', 0);
+    $pdf->Cell(35, 10, utf8_decode('ID:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['id']), 1, 'C', 0);
+
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Nombre:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['nombre']), 1, 'C', 0);
     
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Dirección IP'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['direccion_ip']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Dirección IP:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['direccion_ip']), 1, 'C', 0);
     
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Dirección MAC'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['direccion_mac']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Dirección MAC:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['direccion_mac']), 1, 'C', 0);
    
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Ubicación'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['ubicacion']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Ubicación:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['ubicacion']), 1, 'C', 0);
     
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Responsable'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['responsable']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Responsable:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['responsable']), 1, 'C', 0);
     
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Número Serial'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['numero_serial']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Número Serial:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['numero_serial']), 1, 'C', 0);
     
-    $pdf->SetX(80);
-    $pdf->Cell(40, 10, utf8_decode('Categorías'), 1, 0, 'C', 0);
-    $pdf->MultiCell(80, 10, utf8_decode($producto['categorias']), 1, 'C', 0);
+    $pdf->SetX(90);
+    $pdf->SetFont('Arial', 'B', 12);
+    $pdf->Cell(35, 10, utf8_decode('Categorías:'), 1, 0, 'L', 1);
+    $pdf->SetFont('Arial', '', 12); //le le quita la negrita 'B' que estoy colocando en las CELL//
+    $pdf->MultiCell(75, 10, utf8_decode($producto['categorias']), 1, 'C', 0);
     $sql = "SELECT imagen FROM productos WHERE id = $id";
+// Definir función para dibujar un cuadrado
+function drawSquare($pdf, $x, $y, $size) {
+   $pdf->Rect($x, $y, $size, $size);
+}
+
+// Establecer el color de la línea del cuadrado (en este caso, negro)
+$pdf->SetDrawColor(0, 0, 0);
+
+// Coordenadas donde se ubicará el cuadrado y dimensiones
+$x = 10;
+$y = 38;
+$width = 50;
+$height = 80;
+
+// Dibujar el cuadrado encima de todos los objetos
+drawSquare($pdf, $x, $y, $height);
+
     $resultado = $conexion->query($sql);
     
     if ($resultado->num_rows > 0) {
@@ -121,7 +155,7 @@ if ($resultado->num_rows > 0) {
         file_put_contents($archivo_temporal, $fila['imagen']);
     
         // Cargar la imagen en el documento PDF
-        $pdf->Image($archivo_temporal, 10, 60, 50, 50); // Ajusta las coordenadas y dimensiones según tu diseño
+        $pdf->Image($archivo_temporal, 15, 43, 70, 70); // Ajusta las coordenadas y dimensiones según tu diseño
     
         // Eliminar el archivo temporal
         unlink($archivo_temporal);

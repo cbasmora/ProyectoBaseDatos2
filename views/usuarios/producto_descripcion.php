@@ -12,6 +12,8 @@ $productos = mysqli_fetch_assoc($resultado);
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header copy.php' ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 <body>
 
     
@@ -86,7 +88,7 @@ $productos = mysqli_fetch_assoc($resultado);
 </div><br>   
 <br>   
 <br>   
-<a id="boton" href="../../fpdf/pruebaV.php" target="_blank" class="btn btn-succsess">Imprimir Información</a>
+<center><a id="boton" href="../../fpdf/PruebaV.php" target="_blank" class="bi bi-printer"> Imprimir Información</a></center>
 
 <script>
     // Obtener el ID de la URL actual
