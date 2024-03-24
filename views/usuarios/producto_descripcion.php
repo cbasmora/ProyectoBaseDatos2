@@ -13,11 +13,13 @@ $productos = mysqli_fetch_assoc($resultado);
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header copy.php' ?>
 <body>
+
     
 <div class="row">
     <img src="http://192.168.1.150/inventario-sis/img/HDV.png" width="100%" alt="Título de la página">
 </div>
 <br>
+
 <center><p><h1><em><b><div id="nombre"><?php echo $productos['nombre']; ?></div></b></em></h1></p><br>
 <br>
 <br><img width="20%" src="data:image/jpeg;base64,<?php echo base64_encode($productos['imagen']); ?>" alt="Imagen previamente cargada" /></center>
@@ -84,10 +86,22 @@ $productos = mysqli_fetch_assoc($resultado);
 </div><br>   
 <br>   
 <br>   
-<br>   
-<br>   
-<br>   
+<a id="boton" href="../../fpdf/pruebaV.php" target="_blank" class="btn btn-succsess">Imprimir Información</a>
 
+<script>
+    // Obtener el ID de la URL actual
+    var urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get('id');
+    
+    // Obtener el botón y agregar el ID como parámetro
+    var boton = document.getElementById('boton');
+    boton.href += "?id=" + id;
+</script>
+<br>   
+<br>   
+<div>
+
+</div>
 </div>
 </div>
 </div>
