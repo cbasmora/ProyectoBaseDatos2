@@ -52,6 +52,15 @@ if($actualsesion == null || $actualsesion == ''){
                         
                     </li>
                     <li class="has-subnav">
+                        <a href="formulario_notas.php">
+                        <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+                            <span class="nav-text">
+                                Agregar Mantenimiento
+                            </span>
+                        </a>
+                        
+                    </li>
+                    <li class="has-subnav">
                         <a href="excel.php">
                         <i class="fa fa-solid fa-download fa-2x"></i>
                             <span class="nav-text">
@@ -62,7 +71,16 @@ if($actualsesion == null || $actualsesion == ''){
                     </li>
                 </ul>
 
+
                 <ul class="logout">
+                <li>
+                        <a href="../usuarios/usuariosindex.php">
+                        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                              <span class="nav-text">
+                                 Usuario
+                              </span>
+                          </a>
+                       </li>
                     <li>
                         <a href="../../includes/_sesion/cerrarSesion.php">
                         <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
@@ -71,6 +89,7 @@ if($actualsesion == null || $actualsesion == ''){
                               </span>
                           </a>
                        </li>
+
                 </ul>
             </nav>
         </div>

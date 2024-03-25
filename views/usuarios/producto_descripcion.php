@@ -32,14 +32,14 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="nombre" class="form-label">Nombre del Equipo</label>
+<label for="nombre" class="form-label">Nombre del Equipo:</label>
 <input type="text"  id="nombre" name="nombre" value="<?php echo $productos ['nombre']; ?>" class="form-control" readonly>
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="direccion_ip" class="form-label">Dirección IP</label>
+<label for="direccion_ip" class="form-label">Dirección IP:</label>
 <input type="text"  id="direccion_ip" name="direccion_ip" value="<?php echo $productos ['direccion_ip']; ?>" class="form-control" readonly>
 </div>
 </div>
@@ -48,14 +48,14 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="direccion_mac" class="form-label">Dirección MAC</label>
+<label for="direccion_mac" class="form-label">Dirección MAC:</label>
 <input type="text"  id="direccion_mac" name="direccion_mac" value="<?php echo $productos ['direccion_mac']; ?>"  class="form-control" readonly>
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="ubicacion" class="form-label">ubicacion del equipo</label>
+<label for="ubicacion" class="form-label">Ubicacion del Equipo:</label>
 <input type="text"  id="ubicacion" name="ubicacion"  value="<?php echo $productos ['ubicacion']; ?>" class="form-control" readonly>
 </div>
 </div>
@@ -64,7 +64,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="row">
 <div class="col-sm-6">
 <div class="mb-3">
-<label for="responsable" class="form-label">Responsable</label>
+<label for="responsable" class="form-label">Responsable:</label>
 <input type="text"  id="responsable" name="responsable"  value="<?php echo $productos ['responsable']; ?>" class="form-control" readonly>
 </div>
 </div>
@@ -72,7 +72,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="col-sm-6">
 
 <div class="mb-3">
-<label for="numero_serial" class="form-label">Número Serial</label>
+<label for="numero_serial" class="form-label">Número Serial:</label>
 <input type="text"  id="numero_serial" name="numero_serial" value="<?php echo $productos ['numero_serial']; ?>" class="form-control" readonly>
 </div>
 
@@ -82,7 +82,7 @@ $productos = mysqli_fetch_assoc($resultado);
 </div>
 <div class="row">
 <div class="col-sm-12">
-<label for="categorias" class="form-label">Número Serial</label>
+<label for="categorias" class="form-label">Categroría:</label>
 <input type="text"  id="categorias" name="categorias" value="<?php echo $productos ['categorias']; ?>" class="form-control" readonly>
 </div>
 </div><br>   

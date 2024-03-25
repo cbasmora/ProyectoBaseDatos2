@@ -2,15 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
-<?php require '../../includes/_header.php' ?>
+<?php require '../../includes/_header copy.php' ?>
 
 <body>
   
-<div id= "content">
-        <section>
-        <div class="container mt-5">
-<div class="row">
-<div class="col-sm-12 mb-3">
 <center><h1>Información de sesion actual</h1></center>
 </div>
 <div class="col-sm-12">
@@ -21,11 +16,11 @@
 <thead>
 
 <tr>
-<th>Nombre</th>
-<th>Telefono</th>
-<th>Correo</th>
+<th id="90">Nombre</th>
+<th>Celular</th>
+<th>Usuario</th>
 <th>Contraseña</th>
-<th>registro</th>
+<th>Fecha de Ingreso</th>
 
 
 </tr>
@@ -82,8 +77,6 @@ foreach($usuarios as $key => $row ){
             </div>
         </section>
     </div>
-    
-    <?php require '../../includes/_footer.php' ?>
     </body>
 
 </html>
