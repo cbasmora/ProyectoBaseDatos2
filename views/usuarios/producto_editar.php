@@ -89,7 +89,8 @@ $productos = mysqli_fetch_assoc($resultado);
 <div class="row">
         <div class="col-sm-12">
             <div class="form-group">
-                <input type="file" class="form-control-file"  name="foto" id="foto">
+                <input type="file" class="form-control-file" accept=".png" name="foto" id="foto">
+                <small class="form-text text-muted">Nota: Solo se admiten archivos PNG.</small>
             </div>
         </div>
     </div>
