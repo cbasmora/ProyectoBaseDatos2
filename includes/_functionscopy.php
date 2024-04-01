@@ -3,31 +3,32 @@
 require_once ("_db.php");
 
 
-if(isset($_POST['accion'])){ 
-    switch($_POST['accion']){
+if (isset($_POST['accion'])) {
+    switch ($_POST['accion']) {
         case 'eliminar_producto':
             eliminar_producto();
 
-        break;        
+            break;
         case 'editar_producto':
-        editar_producto();
+            editar_producto();
 
-        break;
+            break;
 
         case 'insertar_productos':
-        insertar_productos();
+            insertar_productos();
 
-        break;    
+            break;
     }
 
 }
 
-function insertar_productos(){
+function insertar_productos()
+{
     var_dump($_POST);
     global $conexion;
     extract($_POST);
 
-// Verificar si el nombre ya existe
+    // Verificar si el nombre ya existe
     if (nombreExiste($nombre)) {
         $response = array(
             'type' => 'error',
@@ -39,38 +40,39 @@ function insertar_productos(){
     }
     $extension = strtolower(pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION));
 
-// Verificar si la extensión es PNG
-if ($extension != "png") {
-    // Si no es PNG, mostrar un error o tomar alguna otra acción
-    $response = array(
-        'type' => 'error',
-        'title' => 'Error',
-        'text' => 'El archivo debe ser de tipo PNG.'
-    );
-    echo json_encode($response);
-    exit();
-}
-        //variables donde se almacenan los valores de nuestra imagen
-                $tamanoArchvio=$_FILES['foto']['size'];
-    
-        //se realiza la lectura de la imagen
-                $imagenSubida=fopen($_FILES['foto']['tmp_name'], 'r');
-                $binariosImagen=fread($imagenSubida,$tamanoArchvio);   
-        //se realiza la consulta correspondiente para guardar los datos
-        
-        $imagen =mysqli_escape_string($conexion,$binariosImagen);
-                
+    // Verificar si la extensión es PNG
+    if ($extension != "png") {
+        // Si no es PNG, mostrar un error o tomar alguna otra acción
+        $response = array(
+            'type' => 'error',
+            'title' => 'Error',
+            'text' => 'El archivo debe ser de tipo PNG.'
+        );
+        echo json_encode($response);
+        exit();
+    }
+    //variables donde se almacenan los valores de nuestra imagen
+    $tamanoArchvio = $_FILES['foto']['size'];
 
-//Código para agregar a la base de datos//
-        $consulta="INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen, fecha_fabricacion, Marca, Modelo, memoria_ram, disco_duro, sistema_operativo, observaciones, monitor_serial, teclado_serial, mouse_serial, otro_periferico, procesador)
-        VALUES ('$nombre', '$direccion_ip', '$direccion_mac', '$ubicacion', '$responsable', '$numero_serial', '$categorias', '$imagen', '$fecha_fabricacion', '$Marca', '$Modelo', '$memoria_ram', '$disco_duro', '$sistema_operativo', '$observaciones', '$monitor_serial', '$teclado_serial', '$mouse_serial', '$otro_periferico', '$procesador');" ;
+    //se realiza la lectura de la imagen
+    $imagenSubida = fopen($_FILES['foto']['tmp_name'], 'r');
+    $binariosImagen = fread($imagenSubida, $tamanoArchvio);
+    //se realiza la consulta correspondiente para guardar los datos
+
+    $imagen = mysqli_escape_string($conexion, $binariosImagen);
+
+
+    //Código para agregar a la base de datos//
+    $consulta = "INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen, fecha_fabricacion, Marca, Modelo, memoria_ram, disco_duro, sistema_operativo, observaciones, monitor_serial, teclado_serial, mouse_serial, otro_periferico, procesador)
+        VALUES ('$nombre', '$direccion_ip', '$direccion_mac', '$ubicacion', '$responsable', '$numero_serial', '$categorias', '$imagen', '$fecha_fabricacion', '$Marca', '$Modelo', '$memoria_ram', '$disco_duro', '$sistema_operativo', '$observaciones', '$monitor_serial', '$teclado_serial', '$mouse_serial', '$otro_periferico', '$procesador');";
 
     mysqli_query($conexion, $consulta);
-    
+
     header("Location: ../views/usuarios/");
 
 }
-function editar_producto(){
+function editar_producto()
+{
     global $conexion;
     extract($_POST);
 
@@ -93,16 +95,57 @@ function editar_producto(){
         $binariosImagen = fread($imagenSubida, $tamanoArchivo);
         $imagen = mysqli_escape_string($conexion, $binariosImagen);
 
-        $consulta = "UPDATE productos SET nombre = '$nombre', direccion_ip = '$direccion_ip', direccion_mac = '$direccion_mac', ubicacion = '$ubicacion', responsable = '$responsable', numero_serial = '$numero_serial', categorias = '$categorias', imagen = '$imagen' WHERE id = $id";
+        $consulta = "UPDATE productos SET 
+        nombre = '$nombre', 
+        direccion_ip = '$direccion_ip', 
+        direccion_mac = '$direccion_mac', 
+        ubicacion = '$ubicacion', 
+        responsable = '$responsable', 
+        numero_serial = '$numero_serial', 
+        categorias = '$categorias', 
+        imagen = '$imagen', 
+        fecha_fabricacion = '$fecha_fabricacion', 
+        Marca = '$Marca', 
+        Modelo = '$Modelo', 
+        memoria_ram = '$memoria_ram', 
+        disco_duro = '$disco_duro', 
+        sistema_operativo = '$sistema_operativo', 
+        observaciones = '$observaciones', 
+        monitor_serial = '$monitor_serial', 
+        teclado_serial = '$teclado_serial', 
+        mouse_serial = '$mouse_serial', 
+        otro_periferico = '$otro_periferico', 
+        procesador = '$procesador'
+        WHERE id = $id";
     } else {
         // No se ha subido una nueva imagen, no actualices la imagen en la base de datos
-        $consulta = "UPDATE productos SET nombre = '$nombre', direccion_ip = '$direccion_ip', direccion_mac = '$direccion_mac', ubicacion = '$ubicacion', responsable = '$responsable', numero_serial = '$numero_serial', categorias = '$categorias' WHERE id = $id";
-    }
+        $consulta = "UPDATE productos SET 
+        nombre = '$nombre', 
+        direccion_ip = '$direccion_ip', 
+        direccion_mac = '$direccion_mac', 
+        ubicacion = '$ubicacion', 
+        responsable = '$responsable', 
+        numero_serial = '$numero_serial', 
+        categorias = '$categorias',
+        fecha_fabricacion = '$fecha_fabricacion', 
+        Marca = '$Marca', 
+        Modelo = '$Modelo', 
+        memoria_ram = '$memoria_ram', 
+        disco_duro = '$disco_duro', 
+        sistema_operativo = '$sistema_operativo', 
+        observaciones = '$observaciones', 
+        monitor_serial = '$monitor_serial', 
+        teclado_serial = '$teclado_serial', 
+        mouse_serial = '$mouse_serial', 
+        otro_periferico = '$otro_periferico', 
+        procesador = '$procesador'  
+        WHERE id = $id";    }
 
     mysqli_query($conexion, $consulta);
     header("Location: ../views/usuarios/");
 }
-function eliminar_producto(){
+function eliminar_producto()
+{
 
     global $conexion;
     extract($_POST);

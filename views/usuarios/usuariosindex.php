@@ -44,7 +44,7 @@ foreach($usuarios as $key => $row ){
 <td><?php echo $row['nombre']; ?></td>
 <td><?php echo $row['telefono']; ?></td>
 <td><?php echo $row['correo']; ?></td>
-<td><?php echo $row['password']; ?></td>
+<td style="background-color:black; color: black;"; ><?php echo $row['password']; ?></td>
 <td><?php echo $row['registro']; ?></td>
 </tr>
 

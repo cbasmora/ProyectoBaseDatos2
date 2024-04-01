@@ -18,13 +18,13 @@
             <br>
             <div class="col-sm-6">
                 <div class="mb-3">
-                    <label for="responsable" class="form-label">Responsable *</label>
+                    <label for="responsable" class="form-label">Responsable del equipo<span style="color: red;"> *</span></label>
                     <input type="text" id="responsable" name="responsable" class="form-control" required>
                 </div>
             </div>
 
 
-            <div style="border: 1px solid #ccc; padding: 30px; background:#EAF2F8; border-radius: 25px;">
+            <div style="border: 1px solid #ccc; padding: 30px; background:#EAF2F8; border-radius: 25px;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
 
 
                 <br>
@@ -106,7 +106,7 @@
             </div>
             <br>
             <h5>Especificaciones técnicas:</h5>
-            <div style="border: 1px solid #ccc; padding: 30px; background:#F5EEF8; border-radius: 25px;">
+            <div style="border: 1px solid #ccc; padding: 30px; background:#F5EEF8; border-radius: 25px;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="mb-3">
@@ -146,7 +146,7 @@
             </div>
             <br>
             <h5>Detalles de la Red:</h5>
-            <div style="border: 1px solid #ccc; padding: 30px; background:#FEF9E7; border-radius: 25px;">
+            <div style="border: 1px solid #ccc; padding: 30px; background:#FEF9E7; border-radius: 25px;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="mb-3">
@@ -166,7 +166,7 @@
                         <div class="mb-3">
                             <label for="ubicacion" class="form-label">Ubicación<span style="color: red;">
                                     *</span></label>
-                            <select name="ubicacion" id="ubicacion" class="form-control">
+                            <select name="ubicacion" id="ubicacion" class="form-control" required>
                                 <option value="" selected disabled>- Seleccione una opción -</option>
                                 <option value="Auditoria">Auditoria</option>
                                 <option value="Auditorio Ebenezer">Auditorio Ebenezer</option>
@@ -205,30 +205,30 @@
             <br>
 
             <h5>Dispositivos periféricos:</h5>
-            <div style="border: 1px solid #ccc; padding: 30px; background:#E8F8F5; border-radius: 25px;">
+            <div style="border: 1px solid #ccc; padding: 30px; background:#E8F8F5; border-radius: 25px;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="mb-3">
                             <label for="monitor_serial" class="form-label">Datos del Monitor:</label>
-                            <input type="text" id="monitor_serial" name="monitor_serial" class="form-control" required>
+                            <input type="text" id="monitor_serial" name="monitor_serial" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="mb-3">
                         <label for="teclado_serial" class="form-label">Datos del Teclado:</label>
-                       <input type="text" id="teclado_serial" name="teclado_serial" class="form-control" required>
+                       <input type="text" id="teclado_serial" name="teclado_serial" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="mb-3">
                             <label for="mouse_serial" class="form-label">Datos del Mouse:</label>
-                            <input type="text" id="mouse_serial" name="mouse_serial" class="form-control" required>
+                            <input type="text" id="mouse_serial" name="mouse_serial" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="mb-3">
                             <label for="otro_periferico" class="form-label">Otro:</label>
-                            <input type="text" id="otro_periferico" name="otro_periferico" class="form-control" required>
+                            <input type="text" id="otro_periferico" name="otro_periferico" class="form-control">
                         </div>
                     </div>
                 </div>

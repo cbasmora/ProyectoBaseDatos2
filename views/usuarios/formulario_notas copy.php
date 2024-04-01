@@ -16,36 +16,36 @@ $query_productos = "SELECT id, nombre FROM productos";
 $result_productos = $conexion->query($query_productos);
 ?>
 
-<!DOCTYPE html>
-<html>
 <head>
     <title>Formulario de Registro</title>
+    <link href="../css/agregarnota.css" rel="stylesheet">
 </head>
+
 <body>
-        <br>
-        <br>
-        <br>
-            <style>
-        .form-label {
-            margin-left: 10%; /* Desplazamiento del 10% hacia la derecha */
-            width: 80%; /* Ancho del 80% para mantener el espacio en el centro */
-        }
-    </style>
+    <br>
+    <br>
+    <br>
     <form method="post">
-        <label for="id_producto">Equipo:</label>
-        <select name="id_producto" id="id_producto" required>
-            <option value="">Seleccione un equipo</option> <!-- Opción vacía por defecto -->
-            <?php
-            while ($row = $result_productos->fetch_assoc()) {
-                echo "<option value='" . $row['id'] . "'>" . $row['nombre'] . "</option>";
-            }
-            ?>
-        </select><br><br>
-        <label for="nota">Registro:</label><br>
-        <center>
-<textarea name="nota" id="nota" cols="30" rows="10" style="width: 80%;" required></textarea><br><br>
-<input class="btn btn-success" type="submit" name="submit" value="Agregar Registro">        <center>
-    </form>
+    <label for="id_producto">Equipo:</label>
+    <select name="id_producto" id="id_producto" required>
+        <option value="">Seleccione un equipo</option> <!-- Opción vacía por defecto -->
+        <?php
+        while ($row = $result_productos->fetch_assoc()) {
+            echo "<option value='" . $row['id'] . "'>" . $row['nombre'] . "</option>";
+        }
+        ?>
+    </select><br><br>
+    <label for="tipo_mantenimiento">Tipo de Mantenimiento:</label>
+    <select name="tipo_mantenimiento" id="tipo_mantenimiento" required>
+        <option value="">Seleccione el tipo de mantenimiento</option> <!-- Opción vacía por defecto -->
+        <option value="preventivo">Preventivo</option>
+        <option value="correctivo">Correctivo</option>
+        <option value="otro">Otro</option>
+    </select><br><br>
+    <label for="nota">Registro:</label><br>
+    <textarea name="nota" id="nota" cols="30" rows="10" style="width: 80%;" required></textarea><br><br>
+    <input class="btn btn-success" type="submit" name="submit" value="Agregar Registro">
+</form>
     <?php
     if (isset($_POST['submit'])) {
         $id_producto = $_POST['id_producto'];
@@ -61,4 +61,5 @@ $result_productos = $conexion->query($query_productos);
     }
     ?>
 </body>
+
 </html>

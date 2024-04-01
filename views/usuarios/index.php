@@ -38,17 +38,17 @@
 <tbody>
 
 <?php
-
+$contador_equipos = 1;
 $sql = "SELECT * FROM productos";
 $productos = mysqli_query($conexion, $sql);
 if($productos -> num_rows > 0){
-foreach($productos as $key => $row ){
+while($row = mysqli_fetch_assoc($productos)){
 ?>
 <!--funcion y estilos para celdas en error-->
 
 <!-- empieza la tabla-->
 <tr>
-<td <?php echo  'class="'.$row['categorias'] .'"'; ?>><?php echo $row['id']; ?></td>
+<td <?php echo  'class="'.$row['categorias'] .'"'; ?>><?php echo $contador_equipos; ?></td>
 <td><?php echo $row['nombre']; ?></td>
 <td><?php echo $row['direccion_ip']; ?></td>
 <td><?php echo $row['direccion_mac']; ?></td>
@@ -83,6 +83,10 @@ foreach($productos as $key => $row ){
 
 </td>
 </tr>
+<?php
+// Incrementar el contador de equipos
+$contador_equipos++;
+?>
 
 
 <?php

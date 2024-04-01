@@ -451,11 +451,8 @@ pre code{
 }
 .row{
     display:-ms-flexbox;
-    display:flex;
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
-    margin-right:-15px;
-    margin-left:-15px
 }
 .no-gutters{
     margin-right:0;
@@ -1639,9 +1636,11 @@ select.form-control[multiple],select.form-control[size]{
     height:auto
 }
 textarea.form-control{
+    margin: 2%;
+    width: 98%;
     height:100px;
-    width: 100%;
     border-radius: 25px ;
+    align-items: center;
 }
 .form-group{
     margin-bottom:1rem
@@ -4298,7 +4297,7 @@ button.close{
     padding:0;
     background-color:transparent;
     border:0;
-    -webkit-appearance:none
+
 }
 .modal-open{
     overflow:hidden
