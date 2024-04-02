@@ -40,6 +40,7 @@ class PDF extends FPDF
 
         // Restaura la posición original
         $this->SetXY($posX, $posY);
+            $this->SetTextColor(0, 0, 0);
 
     }
 
@@ -91,14 +92,14 @@ if ($resultado->num_rows > 0) {
     $pdf->SetTextColor(0, 0, 0);
 
     $productos = [
-        'TIPO:' => $producto['categorias'],
-        'FECHA DE COMPRA:' => $producto['fecha_fabricacion'],
-        'MARCA:' => $producto['Marca'],
-        'SERIAL:' => $producto['numero_serial'],
-        'REFERENCIA:' => $producto['Modelo'],
-        'SISTEMA OPERATIVO:' => $producto['sistema_operativo'],
-        'PROCESADOR:' => $producto['procesador'],
-        'MEMORIA RAM:' => $producto['memoria_ram'],
+        'Tipo:' => $producto['categorias'],
+        'Fecha de Compra:' => $producto['fecha_fabricacion'],
+        'Marca:' => $producto['Marca'],
+        'Serial:' => $producto['numero_serial'],
+        'Referencia:' => $producto['Modelo'],
+        'Sistema Operativo:' => $producto['sistema_operativo'],
+        'Procesador:' => $producto['procesador'],
+        'Memoria Ram:' => $producto['memoria_ram'],
 
 
     ];
@@ -107,7 +108,7 @@ if ($resultado->num_rows > 0) {
     function addDetalle($pdf, $titulo, $contenido)
     {
         $pdf->SetFillColor(220, 230, 241, 255);
-        $pdf->SetFont('Arial', 'B', 10);
+        $pdf->SetFont('Arial', 'B', 11);
         $pdf->Cell(40, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
         $maxWidth = 70; // Ancho máximo permitido para el contenido
@@ -115,11 +116,11 @@ if ($resultado->num_rows > 0) {
 
         if ($textWidth <= $maxWidth) {
             // El contenido cabe dentro del ancho máximo, se muestra normalmente
-            $pdf->SetFont('Arial', '', 12);
+            $pdf->SetFont('Arial', '', 11);
             $pdf->Cell($maxWidth, 10, utf8_decode($contenido), 1, 1, 'L', 0);
         } else {
             // El contenido es más ancho de lo permitido, se oculta
-            $pdf->SetFont('Arial', '', 12);
+            $pdf->SetFont('Arial', '', 11);
             $pdf->Cell($maxWidth, 10, '...', 1, 1, 'L', 0);
         }
     }
@@ -180,7 +181,7 @@ if ($resultado->num_rows > 0) {
     }
     // ACÁ ESTA EL ESPACIO PARA LAS OBSERVACIONES//
 
-    $pdf->SetFont('Arial', '', 12);
+    $pdf->SetFont('Arial', '', 11);
     $pdf->SetFillColor(220, 230, 241);
     $pdf->MultiCell(0, 6, utf8_decode('OBSERVACIONES GENERALES: ' . $producto['observaciones']), 1, 'L', false);
 
@@ -188,27 +189,28 @@ if ($resultado->num_rows > 0) {
 
 
     //ACÁ TERMINA EL ESPACIO PARA LAS OBSERVACIONES//
+    // TABLA PARA PERIFERICOS----------------------------------------------------------------------------------
     function barraalta($pdf, $titulo)
     {
         $pdf->SetFillColor(54, 96, 146, 255);
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->Cell(0, 10, utf8_decode($titulo), 1, 1, 'C', 1); // 1 al final para que el borde sea completo
-        $pdf->Ln(5); // Espacio entre el encabezado y el contenido
+        $pdf->Ln(0); // Espacio entre el encabezado y el contenido
     }
-    $pdf->Ln(5); // Espacio adicional antes de la tabla
+    $pdf->Ln(7); // Espacio adicional antes de la tabla
     $pdf->SetTextColor(255, 255, 255);
     barraalta($pdf, 'INFORMACIÓN DISPOSITIVOS PERIFÉRICOS');
     $pdf->SetTextColor(0, 0, 0);
 
-    // TABLA PARA PERIFERICOS----------------------------------------------------------------------------------
+
     $nuevaTabla = [
-        ['MONITOR:' => $producto['monitor_serial'], 'TECLADO:' => 'Contenido 2'],
-        ['MOUSE:' => 'Contenido 3', 'OTRO:' => 'Contenido 4'],
+        ['S/N Monitor:' => $producto['monitor_serial'], 'S/N Teclado:' => $producto['teclado_serial']],
+        ['S/N Mouse:' => $producto['mouse_serial'], 'Otro:' => $producto['otro_periferico']],
         // Añade más filas según sea necesario
     ];
 
     // Agrega un espacio antes de la nueva tabla
-    $pdf->Ln(1);
+    $pdf->Ln(0);
 
     // Establece el ancho de las columnas
     $anchoColumnaTitulo = 40;
@@ -216,7 +218,7 @@ if ($resultado->num_rows > 0) {
 
     // Establece el color de fondo y la fuente para las celdas
     $pdf->SetFillColor(220, 230, 241);
-    $pdf->SetFont('Arial', 'B', 10);
+    $pdf->SetFont('Arial', 'B', 11);
 
     // Agrega las celdas para cada fila de la tabla
     foreach ($nuevaTabla as $fila) {
@@ -225,13 +227,13 @@ if ($resultado->num_rows > 0) {
             $pdf->Cell($anchoColumnaTitulo, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
             // Establece la fuente para el contenido (sin negrita)
-            $pdf->SetFont('Arial', '', 10);
+            $pdf->SetFont('Arial', '', 11);
 
             // Celda para el contenido
             $pdf->Cell($anchoColumnaContenido, 10, utf8_decode($contenido), 1, 0, 'L', 0);
 
             // Restaura la fuente para el título (negrita)
-            $pdf->SetFont('Arial', 'B', 10);
+            $pdf->SetFont('Arial', 'B', 11);
         }
 
         // Salto de línea al final de la fila
@@ -239,29 +241,29 @@ if ($resultado->num_rows > 0) {
     }
     // cierra TABLA PARA PERIFERICOS----------------------------------------------------------------------------------
 
-
+    //TABLA PARA DATOS DE LA RED------------------------------------------------------------------------------------
 
     function barramedia($pdf, $titulo)
     {
         $pdf->SetFillColor(54, 96, 146, 255);
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->Cell(0, 10, utf8_decode($titulo), 1, 1, 'C', 1); // 1 al final para que el borde sea completo
-        $pdf->Ln(5); // Espacio entre el encabezado y el contenido
+        $pdf->Ln(0); // Espacio entre el encabezado y el contenido
     }
-    $pdf->Ln(5); // Espacio adicional antes de la tabla
+    $pdf->Ln(4); // Espacio adicional antes de la tabla
     $pdf->SetTextColor(255, 255, 255);
     barramedia($pdf, 'DATOS DE RED');
     $pdf->SetTextColor(0, 0, 0);
 
-    //TABLA PARA DATOS DE LA RED------------------------------------------------------------------------------------
+
     $nuevaTabla = [
-        ['Título 1' => 'Contenido 1', 'Título 2' => 'Contenido 2'],
+        ['Dirección IP:' => $producto['direccion_ip'], 'Dirección MAC:' => $producto['direccion_mac']],
 
         // Añade más filas según sea necesario
     ];
 
     // Agrega un espacio antes de la nueva tabla
-    $pdf->Ln(1);
+    $pdf->Ln(0);
 
     // Establece el ancho de las columnas
     $anchoColumnaTitulo = 40;
@@ -269,7 +271,7 @@ if ($resultado->num_rows > 0) {
 
     // Establece el color de fondo y la fuente para las celdas
     $pdf->SetFillColor(220, 230, 241);
-    $pdf->SetFont('Arial', 'B', 10);
+    $pdf->SetFont('Arial', 'B', 11);
 
     // Agrega las celdas para cada fila de la tabla
     foreach ($nuevaTabla as $fila) {
@@ -277,8 +279,14 @@ if ($resultado->num_rows > 0) {
             // Celda para el título
             $pdf->Cell($anchoColumnaTitulo, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
+            // Establece la fuente para el contenido (sin negrita)
+            $pdf->SetFont('Arial', '', 11);
+
             // Celda para el contenido
             $pdf->Cell($anchoColumnaContenido, 10, utf8_decode($contenido), 1, 0, 'L', 0);
+
+            // Restaura la fuente para el título (negrita)
+            $pdf->SetFont('Arial', 'B', 11);
         }
 
         // Salto de línea al final de la fila
@@ -294,22 +302,21 @@ if ($resultado->num_rows > 0) {
         $pdf->SetFillColor(54, 96, 146, 255);
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->Cell(0, 10, utf8_decode($titulo), 1, 1, 'C', 1); // 1 al final para que el borde sea completo
-        $pdf->Ln(5); // Espacio entre el encabezado y el contenido
+        $pdf->Ln(0); // Espacio entre el encabezado y el contenido
     }
-    $pdf->Ln(5); // Espacio adicional antes de la tabla
+    $pdf->Ln(4); // Espacio adicional antes de la tabla
     $pdf->SetTextColor(255, 255, 255);
     barrabaja($pdf, 'UBICACIÓN DE INSTALACIÓN');
     $pdf->SetTextColor(0, 0, 0);
 
     //TABLA PARA LA UBICACIÓN Y RESPONSABLE ---------------------------------------------------------------------------------
     $nuevaTabla = [
-        ['Título 1' => 'Contenido 1', 'Título 2' => 'Contenido 2'],
-
+        ['Ubicación:' => $producto['ubicacion'], 'Responsable:' => $producto['responsable']],
         // Añade más filas según sea necesario
     ];
 
     // Agrega un espacio antes de la nueva tabla
-    $pdf->Ln(1);
+    $pdf->Ln(0);
 
     // Establece el ancho de las columnas
     $anchoColumnaTitulo = 40;
@@ -317,7 +324,7 @@ if ($resultado->num_rows > 0) {
 
     // Establece el color de fondo y la fuente para las celdas
     $pdf->SetFillColor(220, 230, 241);
-    $pdf->SetFont('Arial', 'B', 10);
+    $pdf->SetFont('Arial', 'B', 11);
 
     // Agrega las celdas para cada fila de la tabla
     foreach ($nuevaTabla as $fila) {
@@ -325,8 +332,14 @@ if ($resultado->num_rows > 0) {
             // Celda para el título
             $pdf->Cell($anchoColumnaTitulo, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
+            // Establece la fuente para el contenido (sin negrita)
+            $pdf->SetFont('Arial', '', 11);
+
             // Celda para el contenido
             $pdf->Cell($anchoColumnaContenido, 10, utf8_decode($contenido), 1, 0, 'L', 0);
+
+            // Restaura la fuente para el título (negrita)
+            $pdf->SetFont('Arial', 'B', 11);
         }
 
         // Salto de línea al final de la fila
@@ -345,64 +358,79 @@ if ($resultado->num_rows > 0) {
 
         // Configurar la fuente y el color del texto
         $pdf->SetTextColor(128, 128, 128); // Gris
-        $pdf->SetFont('Arial', 'B', 10); // Fuente Arial, negrita, tamaño 10
+        $pdf->SetFont('Arial', 'B', 11); // Fuente Arial, negrita, tamaño 10
         $pdf->SetFont('Arial', 'I', 8); // Tipo de fuente, cursiva, tamaño del texto
         $pdf->Cell(0, 10, utf8_decode('Responsable del equipo'), 0, 1, 'C');
 
         // Restaurar el color y la fuente
         $pdf->SetTextColor(0, 0, 0); // Restaurar a negro
-        $pdf->SetFont('Arial', '', 12); // Restaurar la fuente a Arial, tamaño normal
+        $pdf->SetFont('Arial', '', 11); // Restaurar la fuente a Arial, tamaño normal
 
         // Mover hacia arriba para colocar el nombre más arriba
         $pdf->SetY($pdf->GetY() - 15); // Puedes ajustar el valor (-20) según sea necesario
 
         // Configurar la fuente y el tamaño del texto para que parezca una firma
         $pdf->SetFont('Arial', 'I', 18); // Fuente Arial, cursiva, tamaño 18
+        $pdf->SetTextColor(128);
         $pdf->Cell(0, 1, utf8_decode($responsable), 0, 1, 'C');
         $pdf->Ln(10); // Espacio adicional después de la línea de firma
+        $pdf->SetTextColor(0,0,0);
     }
 
     addFirma($pdf, $producto['responsable']);
     $resultado = $conexion->query($consulta);
 
+// COMIENZA LA TABLA DE LAS NOTAS 
+
+function barramediados($pdf, $titulo)
+{
+    $pdf->SetFillColor(54, 96, 146, 255);
+    $pdf->SetFont('Arial', 'B', 16);
+    $pdf->Cell(0, 10, utf8_decode($titulo), 1, 1, 'C', 1); // 1 al final para que el borde sea completo
+    $pdf->Ln(0); // Espacio entre el encabezado y el contenido
+}
+$pdf->Ln(4); // Espacio adicional antes de la tabla
+$pdf->SetTextColor(255, 255, 255);
+barramediados($pdf, 'DATOS DE RED');
+$pdf->SetTextColor(0, 0, 0);
 
 
-    if ($resultado->num_rows > 0) {
-        $producto = $resultado->fetch_assoc();
+$nuevaTabla = [
+    ['Dirección IP:' => $producto['direccion_ip'], 'Dirección MAC:' => $producto['direccion_mac']],
 
+    // Añade más filas según sea necesario
+];
 
-        $pdf->Cell(0, 10, utf8_decode('Registros realizados: ' . $producto['nombre']), 1, 1, 'C', true);
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->SetFillColor(200, 200, 200); // Color de fondo para la celda del nombre del producto
+// Agrega un espacio antes de la nueva tabla
+$pdf->Ln(0);
 
-        $pdf->Ln(10);
+// Establece el ancho de las columnas
+$anchoColumnaTitulo = 40;
+$anchoColumnaContenido = 55;
 
-        $query_notas = "SELECT id, nota, fecha, usuario, categoria FROM notas WHERE id_producto = $id";
-        $result_notas = $conexion->query($query_notas);
+// Establece el color de fondo y la fuente para las celdas
+$pdf->SetFillColor(220, 230, 241);
+$pdf->SetFont('Arial', 'B', 11);
 
-        $pdf->Ln(); // Salto de línea después de la cabecera
+// Agrega las celdas para cada fila de la tabla
+foreach ($nuevaTabla as $fila) {
+    foreach ($fila as $titulo => $contenido) {
+        // Celda para el título
+        $pdf->Cell($anchoColumnaTitulo, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
-        while ($row = $result_notas->fetch_assoc()) {
-            // Contenido de la tabla
-            $pdf->SetAutoPageBreak(true, 10);
-            $pdf->Cell(30, 10, utf8_decode('NOTA-ID: ' . $row['id']), 1);
-            $pdf->Ln(); // Salto de línea después de cada fila
-            $pdf->MultiCell(50, 10, utf8_decode('Categoría: ' . $row['categoria']), 1);
-            $pdf->MultiCell(30, 10, utf8_decode($row['fecha']), 1);
-            $pdf->MultiCell(30, 10, utf8_decode($row['usuario']), 1);
+        // Establece la fuente para el contenido (sin negrita)
+        $pdf->SetFont('Arial', '', 11);
 
-            // Ajustamos el ancho de la última columna para que la celda se expanda automáticamente
-            $pdf->SetAutoPageBreak(true, 10);
-            $pdf->Ln();
-            $pdf->SetFillColor(255, 255, 255); // Restauramos el color de fondo a blanco para la nota
-            $pdf->MultiCell(0, 10, utf8_decode($row['nota']), 1, 'L', true); // Usamos MultiCell para notas largas
+        // Celda para el contenido
+        $pdf->Cell($anchoColumnaContenido, 10, utf8_decode($contenido), 1, 0, 'L', 0);
 
-            $pdf->Ln(); // Salto de línea después de cada fila
-        }
+        // Restaura la fuente para el título (negrita)
+        $pdf->SetFont('Arial', 'B', 11);
     }
 
-
-
+    // Salto de línea al final de la fila
+    $pdf->Ln();
+}
 
 
 
