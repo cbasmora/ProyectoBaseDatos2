@@ -3,7 +3,7 @@
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header copy.php' ?>
 <body>
-<img src="http://192.168.1.150/inventario-sis/img/agregarequipo.png" width="100%" alt="Título de la página">
+<img src="http://192.168.1.250:8080/inventario-sis/img/agregarequipo.png" width="100%" alt="Título de la página">
 <div class="container">
 <div class="col-sm-6 offset-3 mt-5">
 <form action="../../includes/_functions.php" method="POST"  enctype="multipart/form-data">

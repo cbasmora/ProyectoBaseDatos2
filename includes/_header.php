@@ -31,7 +31,7 @@ if($actualsesion == null || $actualsesion == ''){
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
     <div class="sidebar-brand-icon rotate-n-15">
     </div>
-    <div class="sidebar-brand-text mx-3"><img src="http://192.168.1.150/inventario-sis/img/logo.png" width="100%" alt="Título de la página"></div>
+    <div class="sidebar-brand-text mx-3"><img src="http://192.168.1.250:8080/inventario-sis/img/logo.png" width="100%" alt="Título de la página"></div>
 </a>
 <hr class="sidebar-divider my-0">
 <li class="nav-item active">

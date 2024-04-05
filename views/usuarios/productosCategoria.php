@@ -4,7 +4,7 @@
 <?php require '../../includes/_header copy.php' ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <body>
-<img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
+<img src="http://192.168.1.250:8080/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
 <br>
 <br>
 <a href="producto_agregar.php"><input  class="btn btn-success" type="button" value="✚ Agregar equipo"></a>

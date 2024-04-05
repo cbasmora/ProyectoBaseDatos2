@@ -14,7 +14,7 @@ $productos = mysqli_fetch_assoc($resultado);
 <?php require '../../includes/_header copy.php' ?>
 
 <body>
-    <img src="http://192.168.1.150/inventario-sis/img/editarequipo.png" width="100%" alt="Título de la página">
+    <img src="http://192.168.1.250:8080/inventario-sis/img/editarequipo.png" width="100%" alt="Título de la página">
 
     <div class="container-fluid" style="width: 80%;">
 
@@ -98,7 +98,7 @@ $productos = mysqli_fetch_assoc($resultado);
                                     <select name="categorias" id="categorias" value="<?php echo $productos ['categorias']; ?>" class="form-control" required>
     <option value="" disabled <?php echo empty($productos['categorias']) ? 'selected' : ''; ?>>- Seleccione una opción -</option>
     <option value="Computador_Mesa" <?php echo ($productos['categorias'] === 'Computador_Mesa') ? 'selected' : ''; ?>>Computador de Mesa</option>
-    <option value="Computador_Portatil" <?php echo ($productos['categorias'] === 'Computador_Portatil') ? 'selected' : ''; ?>>Computador Portátil</option>
+    <option value="Computador_Portátil" <?php echo ($productos['categorias'] === 'Computador_Portátil') ? 'selected' : ''; ?>>Computador Portátil</option>
     <option value="Computador_Allinone" <?php echo ($productos['categorias'] === 'Computador_Allinone') ? 'selected' : ''; ?>>Computador All-in-One</option>
     <option value="Computador_Cabina" <?php echo ($productos['categorias'] === 'Computador_Cabina') ? 'selected' : ''; ?>>Computador de Cabina</option>
     <option value="Camaras" <?php echo ($productos['categorias'] === 'Camaras') ? 'selected' : ''; ?>>Cámaras</option>

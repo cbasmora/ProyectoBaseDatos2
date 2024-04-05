@@ -3,7 +3,7 @@
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header copy.php' ?>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<img src="http://192.168.1.150/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
+<img src="http://192.168.1.250:8080/inventario-sis/img/tittle.gif" width="100%" alt="Título de la página">
 <br>
 <a href="producto_agregar.php" class="btn btn-success">
     <i class="fas fa-plus"></i> Agregar equipo

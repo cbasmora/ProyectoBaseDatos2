@@ -5,7 +5,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link href="agregarnota.css" rel="stylesheet">
 
-<img src="http://192.168.1.150/inventario-sis/img/agregarregistro.gif" width="100%" alt="Título de la página">
+<img src="http://192.168.1.250:8080/inventario-sis/img/agregarregistro.gif" width="100%" alt="Título de la página">
 <?php
 $conexion = new mysqli("localhost", "root", "", "inventario");
 if ($conexion->connect_error) {

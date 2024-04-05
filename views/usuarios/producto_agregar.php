@@ -4,7 +4,7 @@
 <?php require '../../includes/_header copy.php' ?>
 
 <body>
-    <img src="http://192.168.1.150/inventario-sis/img/agregarequipo.png" width="100%" alt="Título de la página">
+    <img src="http://192.168.1.250:8080/inventario-sis/img/agregarequipo.png" width="100%" alt="Título de la página">
 
 
     <div class="container-fluid" style="width: 80%;">
@@ -88,7 +88,7 @@
                             <select name="categorias" id="categorias" class="form-control" required>
                                 <option value="" selected disabled>- Seleccione una opción -</option>
                                 <option value="Computador_Mesa">Computador de Mesa</option>
-                                <option value="Computador_Portatil">Computador Portátil</option>
+                                <option value="Computador_Portátil">Computador Portátil</option>
                                 <option value="Computador_Allinone">Computador All-in-One</option>
                                 <option value="Computador_Cabina">Computador de Cabina</option>
                                 <option value="Camaras">Cámaras</option>

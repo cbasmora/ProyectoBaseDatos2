@@ -7,10 +7,10 @@
 <body>
         <tr>
     <td><div class="row">
-    <img src="http://192.168.1.150/inventario-sis/img/categorias.svg" width="100%" alt="Título de la página">
+    <img src="http://192.168.1.250:8080/inventario-sis/img/categorias.svg" width="100%" alt="Título de la página">
 <div class="col-sm-4">
 <a class="catComputador_Portátil" href="formulario_notas.php">
-<img class="img_Computador_Mesa" src="http://192.168.1.150/inventario-sis/img/PORTATIL.SVG">
+<img class="img_Computador_Mesa" src="http://192.168.1.250:8080/inventario-sis/img/Portátil.SVG">
 EQUIPO
 </a>
 </div>  

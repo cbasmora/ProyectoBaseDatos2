@@ -18,7 +18,7 @@ $productos = mysqli_fetch_assoc($resultado);
 
 
     <div class="row">
-        <img src="http://192.168.1.150/inventario-sis/img/HDV.png" width="100%" alt="Título de la página">
+        <img src="http://192.168.1.250:8080/inventario-sis/img/HDV.png" width="100%" alt="Título de la página">
     </div>
     <br>
     <center>
