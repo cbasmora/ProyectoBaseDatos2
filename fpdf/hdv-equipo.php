@@ -413,38 +413,37 @@ if ($resultado->num_rows > 0) {
         // Contenido de la tabla
         $pdf->SetAutoPageBreak(true, 10);
         // Columna para el número de nota
-        $pdf->Cell(10, 10, utf8_decode($numeroNota), 1,0, 'C');
+        $pdf->Cell(10, 10, utf8_decode($numeroNota), 1, 0, 'C', true); // Fondo azul para encabezados
         // Columnas restantes
         $pdf->SetFont('Arial', 'B', 10);
-        $pdf->Cell($columnWidth, 10, utf8_decode('NOTA-ID: ' . $row['id']), 1,0, 'C');
-        $pdf->Cell($columnWidth, 10, utf8_decode($row['categoria']), 1,0, 'C');
-        $pdf->Cell($columnWidth, 10, utf8_decode($row['fecha']), 1,0, 'C');
-        $pdf->Cell($columnWidth, 10, utf8_decode($row['usuario']), 1,0, 'C');
+        $pdf->SetFillColor(54, 96, 146, 255); // Azul claro para encabezados
+        $pdf->SetTextColor(255, 255, 255); // Letras blancas para encabezados
+        $pdf->Cell($columnWidth, 10, utf8_decode('NOTA-ID: ' . $row['id']), 1, 0, 'C', true);
+        $pdf->Cell($columnWidth, 10, utf8_decode($row['categoria']), 1, 0, 'C', true);
+        $pdf->Cell($columnWidth, 10, utf8_decode($row['fecha']), 1, 0, 'C', true);
+        $pdf->Cell($columnWidth, 10, utf8_decode($row['usuario']), 1, 0, 'C', true);
     
         // Separación entre columnas y siguiente fila
         $pdf->SetX($marginLeft); // Mover al inicio de la fila
         $pdf->Ln(10); // Salto de línea con separación de 10 unidades
     
         $numeroNota++; // Incrementar el número de nota
-
+    
         // Ajustamos el ancho de la última columna para que la celda se expanda automáticamente
         $pdf->SetAutoPageBreak(true, 10);
-        
-        // Restauramos el color de fondo a blanco para la nota
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->SetFillColor(173, 216, 230); // Azul claro
-        $pdf->SetTextColor(0, 0, 0); // Letras negras
-        $pdf->MultiCell(0, 15, utf8_decode($row['nota']), 1, 'L', true); // Usamos MultiCell para notas largas
-        
     
-
+        // Restauramos el color de fondo a blanco para la nota
+        $pdf->SetFillColor(255, 255, 255); // Fondo blanco para notas
+        $pdf->SetTextColor(0, 0, 0); // Letras negras para notas
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 7, utf8_decode($row['nota']), 1, 'L', true); // Usamos MultiCell para notas largas
+    
         if ($pdf->GetY() + 10 > $pdf->GetPageHeight()) {
             $pdf->AddPage();
         } else {
             $pdf->Ln(); // Salto de línea
         }
-    }
-}
+    }}
 
 
 
