@@ -439,11 +439,11 @@ if ($resultado->num_rows > 0) {
 $pdf->SetX($marginLeft); // Mover al inicio de la fila
 $pdf->SetFillColor(255, 255, 255); // Fondo blanco para el número de la nota
 $pdf->SetTextColor(0, 0, 0); // Letras negras para el número de la nota
-$pdf->SetFont('Arial', '', 12); // Tamaño del texto para el número de la nota
+$pdf->SetFont('Arial', '', 10); // Tamaño del texto para el número de la nota
 
 // Texto principal (Número de Nota y Código de registro)
-$numeroNotaText = 'Observación N°: ' . $numeroNota;
-$codigoRegistroText = '                                                                                                                                                                                     Código de registro: 000' . $row['id'];
+$numeroNotaText = 'OBSERVACIÓN N°: ' . $numeroNota;
+$codigoRegistroText = '                                                                                                                                                                                Código de registro: 000' . $row['id']; //Lo puse así para que el numero apareciera en la derecha del cuadro.
 
 // Obtener la longitud del texto del número de la nota y del código de registro
 $numeroNotaLength = $pdf->GetStringWidth($numeroNotaText);
@@ -459,7 +459,8 @@ $codigoRegistroWidth = $codigoRegistroLength / $totalWidth * 100;
 $pdf->Cell($numeroNotaWidth, 10, utf8_decode($numeroNotaText), 0, 0, 'L'); // Imprimir número de nota
 
 // Establecer el tamaño de fuente más pequeño para el código de registro
-$pdf->SetFont('Arial', '', 8);
+$pdf->SetFont('Arial', 'I', 8);
+$pdf->SetTextColor(128, 128, 128); // Letras grises para el código de registro
 
 $pdf->Cell($codigoRegistroWidth, 10, utf8_decode($codigoRegistroText), 0, 1, 'L'); // Imprimir código de registro
 
