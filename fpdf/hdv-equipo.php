@@ -88,7 +88,7 @@ if ($resultado->num_rows > 0) {
         $pdf->Ln(5); // Espacio entre el encabezado y el contenido
     }
     $pdf->SetTextColor(255, 255, 255);
-    addEncabezado($pdf, 'INFORMACIÓN DEL EQUIPO');
+    addEncabezado($pdf, 'INFORMACIÓN DEL EQUIPO '. $producto['nombre'] );
     $pdf->SetTextColor(0, 0, 0);
 
     $productos = [
@@ -227,7 +227,7 @@ if ($resultado->num_rows > 0) {
             $pdf->Cell($anchoColumnaTitulo, 10, utf8_decode($titulo), 1, 0, 'L', 1);
 
             // Establece la fuente para el contenido (sin negrita)
-            $pdf->SetFont('Arial', '', 11);
+            $pdf->SetFont('Arial', '', 10);
 
             // Celda para el contenido
             $pdf->Cell($anchoColumnaContenido, 10, utf8_decode($contenido), 1, 0, 'L', 0);
@@ -380,70 +380,132 @@ if ($resultado->num_rows > 0) {
     addFirma($pdf, $producto['responsable']);
     $resultado = $conexion->query($consulta);
 
-// COMIENZA LA TABLA DE LAS NOTAS 
+// COMIENZA LA TABLA DE LAS NOTAS ----------------------------------------------------------------------------------------------------
 
 if ($resultado->num_rows > 0) {
     $producto = $resultado->fetch_assoc();
 
+    $pdf->SetFont('Arial', 'B', 16); // Establecer la fuente, negrita y tamaño
+    $pdf->Cell(0, 5, '', 0, 1, 'C'); // Primer celda con el texto
+    $pdf->Cell(0, 6, 'Observaciones:  ' . $producto['nombre'], 0, 1, 'C'); // Segunda celda con el nombre del producto
 
-    $pdf->Cell(0, 10, utf8_decode('Mantenimientos Registrados:' . $producto['nombre']), 1, 1, 'C', true);
-    $pdf->SetTextColor(25,50,250);
-    $pdf->SetFont('Arial', '', 12);
-
-    $pdf->SetFillColor(200, 200, 200); // Color de fondo para la celda del nombre del producto
-    $pdf->SetTextColor(0,0,0);
-
+    $pdf->SetTextColor(0, 0, 0);
     $pdf->Ln(5);
 
     $query_notas = "SELECT id, nota, fecha, usuario, categoria FROM notas WHERE id_producto = $id";
     $result_notas = $conexion->query($query_notas);
 
-    $pageWidth = 200; // Ancho en milímetros (A4)
+    $pageWidth = 210; // Ancho en milímetros (A4)
     // Margen izquierdo y derecho
     $marginLeft = 10;
     $marginRight = 10;
     // Ancho utilizable para las columnas
     $usableWidth = $pageWidth - $marginLeft - $marginRight;
     // Ancho de cada columna
-    $columnWidth = $usableWidth / 4;
-    
+    $columnWidth = $usableWidth / 3;
+    $pdf->SetFillColor(255, 255, 255); // Fondo blanco para notas
     $numeroNota = 1; // Inicializar contador de notas
 
+    $pdf->SetFont('Arial', '', 10); // Restablecer la fuente para las siguientes celdas
+    $pdf->SetFillColor(255, 255, 255); // Fondo blanco para números de nota
+
+    $marginTop = 40;
+    $marginLeft = 10;
+    $marginRight = 10;
+    
+    // Iterar sobre los resultados de la consulta
     while ($row = $result_notas->fetch_assoc()) {
+        // Guardamos la posición actual para dibujar el rectángulo al final
+        $startX = $pdf->GetX();
+        $startY = $pdf->GetY();
+    
         // Contenido de la tabla
-        $pdf->SetAutoPageBreak(true, 10);
-        // Columna para el número de nota
-        $pdf->Cell(10, 10, utf8_decode($numeroNota), 1, 0, 'C', true); // Fondo azul para encabezados
-        // Columnas restantes
-        $pdf->SetFont('Arial', 'B', 10);
         $pdf->SetFillColor(54, 96, 146, 255); // Azul claro para encabezados
         $pdf->SetTextColor(255, 255, 255); // Letras blancas para encabezados
-        $pdf->Cell($columnWidth, 10, utf8_decode('NOTA-ID: ' . $row['id']), 1, 0, 'C', true);
+        $pdf->SetFont('Arial', 'B', 10); //Tamaño del texto para el contenido de las notas
+        
+        // Fecha
         $pdf->Cell($columnWidth, 10, utf8_decode($row['categoria']), 1, 0, 'C', true);
-        $pdf->Cell($columnWidth, 10, utf8_decode($row['fecha']), 1, 0, 'C', true);
-        $pdf->Cell($columnWidth, 10, utf8_decode($row['usuario']), 1, 0, 'C', true);
-    
-        // Separación entre columnas y siguiente fila
+        
+        // Categoría
+        $pdf->Cell($columnWidth, 10, utf8_decode('Registró: ' . $row['usuario']), 1, 0, 'C', true);
+        
+        // Usuario
+        $pdf->Cell($columnWidth, 10, utf8_decode('Fecha: '.$row['fecha']), 1, 1, 'C', true);
+
+        //ORGANIZA EL ID Y EL NUMERO DE REGISTRO EN LA MISMA FILA ------------------ ACÁ COMIENZA
+        
+// Número de Nota
+$pdf->SetX($marginLeft); // Mover al inicio de la fila
+$pdf->SetFillColor(255, 255, 255); // Fondo blanco para el número de la nota
+$pdf->SetTextColor(0, 0, 0); // Letras negras para el número de la nota
+$pdf->SetFont('Arial', '', 12); // Tamaño del texto para el número de la nota
+
+// Texto principal (Número de Nota y Código de registro)
+$numeroNotaText = 'Observación N°: ' . $numeroNota;
+$codigoRegistroText = '                                                                                                                                                                                     Código de registro: 000' . $row['id'];
+
+// Obtener la longitud del texto del número de la nota y del código de registro
+$numeroNotaLength = $pdf->GetStringWidth($numeroNotaText);
+$codigoRegistroLength = $pdf->GetStringWidth($codigoRegistroText);
+
+// Calcular el ancho total de la celda
+$totalWidth = $numeroNotaLength + $codigoRegistroLength;
+
+// Calcular el ancho para el número de la nota y el código de registro
+$numeroNotaWidth = $numeroNotaLength / $totalWidth * 100;
+$codigoRegistroWidth = $codigoRegistroLength / $totalWidth * 100;
+
+$pdf->Cell($numeroNotaWidth, 10, utf8_decode($numeroNotaText), 0, 0, 'L'); // Imprimir número de nota
+
+// Establecer el tamaño de fuente más pequeño para el código de registro
+$pdf->SetFont('Arial', '', 8);
+
+$pdf->Cell($codigoRegistroWidth, 10, utf8_decode($codigoRegistroText), 0, 1, 'L'); // Imprimir código de registro
+
+        //ORGANIZA EL ID Y EL NUMERO DE REGISTRO EN LA MISMA FILA ------------------ TERMINA
+        
         $pdf->SetX($marginLeft); // Mover al inicio de la fila
-        $pdf->Ln(10); // Salto de línea con separación de 10 unidades
+        $pdf->SetFillColor(255, 255, 255); // Fondo blanco para la descripción
+        $pdf->SetTextColor(0, 0, 0); // Letras negras para la descripción
+        $pdf->SetFont('Arial', 'B', 12); //Tamaño del texto para la descripción y negrita
+        $pdf->Cell(0, 10, utf8_decode('Descripción:'), 0, 1, 'L'); // Imprimir "Descripción" en negrita y en una nueva línea
+        $pdf->SetFont('Arial', '', 12); // Restaurar la fuente normal
+        $pdf->MultiCell(0, 7, utf8_decode($row['nota']), 0, 'L'); // Imprimir la nota con el
+        
+
     
-        $numeroNota++; // Incrementar el número de nota
+// Guardamos la posición final
+$endX = $pdf->GetX();
+$endY = $pdf->GetY();
+
+// Dibujamos el rectángulo alrededor del contenido
+$rectHeight = $pdf->GetY() - $startY; // Calculamos la altura del rectángulo
+$pdf->Rect($startX, $startY, $columnWidth * 3, $rectHeight); // Dibujamos el rectángulo con la altura calculada
+
+// Separación entre filas
+$pdf->Ln(3); // Salto de línea con separación entre cada bloque de notas creadas.
+
+$numeroNota++; // Incrementar el número de nota
+
+// Verificar si el contenido excede el espacio disponible en la página actual
+$cuadroHeight = $pdf->GetY() - $startY;
+
+// Verifica si hay suficiente espacio restante en la página actual considerando el siguiente bloque de notas
+if ($pdf->GetY() + $cuadroHeight + 10 > $pdf->GetPageHeight()) {
+    // Agrega una nueva página
+    $pdf->AddPage();
+    // Restablece los márgenes y la posición Y en la nueva página
+    $pdf->SetLeftMargin($marginLeft);
+    $pdf->SetRightMargin($marginRight);
+    $pdf->SetY($marginTop); // Ajusta según el margen superior deseado
+
+    // Guarda la posición inicial en la nueva página
+    $startY = $pdf->GetY();
+}
+    }
     
-        // Ajustamos el ancho de la última columna para que la celda se expanda automáticamente
-        $pdf->SetAutoPageBreak(true, 10);
-    
-        // Restauramos el color de fondo a blanco para la nota
-        $pdf->SetFillColor(255, 255, 255); // Fondo blanco para notas
-        $pdf->SetTextColor(0, 0, 0); // Letras negras para notas
-        $pdf->SetFont('Arial', '', 12);
-        $pdf->MultiCell(0, 7, utf8_decode($row['nota']), 1, 'L', true); // Usamos MultiCell para notas largas
-    
-        if ($pdf->GetY() + 10 > $pdf->GetPageHeight()) {
-            $pdf->AddPage();
-        } else {
-            $pdf->Ln(); // Salto de línea
-        }
-    }}
+}
 
 
 
