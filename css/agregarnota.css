@@ -1,5 +1,5 @@
 form {
-    max-width: 600px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -31,4 +31,55 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #218838;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del formulario */
+.form-label {
+    margin-left: 10%; /* Desplazamiento del 10% hacia la derecha */
+    width: 80%; /* Ancho del 80% para mantener el espacio en el centro */
+}
+
+textarea {
+    width: 80%;
+}
+
+/* Estilos del botón */
+.btn {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+/* Estilos del mensaje de confirmación o error */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.success {
+    color: #28a745;
+}
+
+.error {
+    color: #dc3545;
 }

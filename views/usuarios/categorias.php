@@ -30,7 +30,7 @@
                                         <a class="catComputador_Portátil"
                                                 href="productosCategoria.php?categoria=<?php echo 'Computador_Portátil' ?>">
                                                 <img class="img_Computador_Mesa"
-                                                        src="http://192.168.1.250:8080/inventario-sis/img/Portátil.SVG">
+                                                        src="http://192.168.1.250:8080/inventario-sis/img/Portatil.SVG">
                                                 Computador Portátil
                                         </a>
                                 </div>

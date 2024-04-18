@@ -11,7 +11,7 @@ header('Expires: 0');
 echo "\xEF\xBB\xBF";
 echo '<table border=1>';
 echo '<tr>';
-echo '<th>ID</th><th>CATEGORÍAS</th><th>NOMBRE</th><th>DIRECCIÓN IP</th><th>DIRECCIÓN MAC</th><th>UBICACIÓN</th><th>NÚMERO SERIAL</th><th>FECHA FABRICACIÓN</th><th>MARCA</th><th>MODELO</th><th>PROCESADOR</th><th>MEMORIA RAM</th><th>DISCO DURO</th><th>SISTEMA OPERATIVO</th><th>MONITOR SERIAL</th><th>TECLADO SERIAL</th><th>MOUSE SERIAL</th><th>OTRO PERIFÉRICO</th><th>RESPONSABLE</th><th>OBSERVACIONES</th>';
+echo '<th>ID</th><th>CATEGORÍAS</th><th>NOMBRE</th><th>DIRECCIÓN IP</th><th>DIRECCIÓN MAC</th><th>UBICACIÓN</th><th>NÚMERO SERIAL</th><th>FECHA FABRICACIÓN</th><th>MARCA</th><th>MODELO</th><th>PROCESADOR</th><th>MEMORIA RAM</th><th>DISCO DURO</th><th>SISTEMA OPERATIVO</th><th>MONITOR SERIAL</th><th>TECLADO SERIAL</th><th>MOUSE SERIAL</th><th>OTRO PERIFÉRICO</th><th>REMOTO</th><th>RESPONSABLE</th><th>OBSERVACIONES</th>';
 echo '</tr>';
 while ($row = mysqli_fetch_array($query)) {
     echo '<tr>';
@@ -33,6 +33,7 @@ while ($row = mysqli_fetch_array($query)) {
     echo '<td>' . $row['teclado_serial'] . '</td>';
     echo '<td>' . $row['mouse_serial'] . '</td>';
     echo '<td>' . $row['otro_periferico'] . '</td>';
+    echo '<td>' . $row['remoto'] . '</td>';
     echo '<td>' . $row['responsable'] . '</td>';
     echo '<td>' . $row['observaciones'] . '</td>';
     echo '</tr>';

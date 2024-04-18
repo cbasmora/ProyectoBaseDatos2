@@ -160,7 +160,7 @@ $productos = mysqli_fetch_assoc($resultado);
                         </div>
                     </div>
                     <br>
-                    <div style="border: 1px solid #ccc; background:#FEF97; border-radius: 25px;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
+                    <div style="border: 1px solid #ccc;border-radius:25px ;box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);">
                         <h5
                             style="background:#F39C12; color: white; border-radius: 25px 25px 0px 0px; height:50px; display: flex; align-items: center; padding-left: 10px; margin: 0;">
                             <b>3. Detalles de la red</b></h5>
@@ -228,6 +228,14 @@ $productos = mysqli_fetch_assoc($resultado);
                                     <label for="otro_periferico" class="form-label">Otro:</label>
                                     <input type="text" id="otro_periferico" name="otro_periferico"
                                         value="<?php echo $productos['otro_periferico']; ?>" class="form-control"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="mb-3">
+                                    <label for="remoto" class="form-label">Remoto:</label>
+                                    <input type="text" id="remoto" name="remoto"
+                                        value="<?php echo $productos['remoto']; ?>" class="form-control"
                                         readonly>
                                 </div>
                             </div>

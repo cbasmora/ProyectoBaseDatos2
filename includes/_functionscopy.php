@@ -63,8 +63,8 @@ function insertar_productos()
 
 
     //Código para agregar a la base de datos//
-    $consulta = "INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen, fecha_fabricacion, Marca, Modelo, memoria_ram, disco_duro, sistema_operativo, observaciones, monitor_serial, teclado_serial, mouse_serial, otro_periferico, procesador)
-        VALUES ('$nombre', '$direccion_ip', '$direccion_mac', '$ubicacion', '$responsable', '$numero_serial', '$categorias', '$imagen', '$fecha_fabricacion', '$Marca', '$Modelo', '$memoria_ram', '$disco_duro', '$sistema_operativo', '$observaciones', '$monitor_serial', '$teclado_serial', '$mouse_serial', '$otro_periferico', '$procesador');";
+    $consulta = "INSERT INTO productos (nombre, direccion_ip, direccion_mac, ubicacion, responsable, numero_serial, categorias, imagen, fecha_fabricacion, Marca, Modelo, memoria_ram, disco_duro, sistema_operativo, observaciones, monitor_serial, teclado_serial, mouse_serial, otro_periferico, procesador, remoto)
+        VALUES ('$nombre', '$direccion_ip', '$direccion_mac', '$ubicacion', '$responsable', '$numero_serial', '$categorias', '$imagen', '$fecha_fabricacion', '$Marca', '$Modelo', '$memoria_ram', '$disco_duro', '$sistema_operativo', '$observaciones', '$monitor_serial', '$teclado_serial', '$mouse_serial', '$otro_periferico', '$procesador', '$remoto');";
 
     mysqli_query($conexion, $consulta);
 
@@ -115,7 +115,8 @@ function editar_producto()
         teclado_serial = '$teclado_serial', 
         mouse_serial = '$mouse_serial', 
         otro_periferico = '$otro_periferico', 
-        procesador = '$procesador'
+        procesador = '$procesador',
+        remoto = '$remoto'
         WHERE id = $id";
     } else {
         // No se ha subido una nueva imagen, no actualices la imagen en la base de datos
@@ -138,7 +139,8 @@ function editar_producto()
         teclado_serial = '$teclado_serial', 
         mouse_serial = '$mouse_serial', 
         otro_periferico = '$otro_periferico', 
-        procesador = '$procesador'  
+        procesador = '$procesador',
+        remoto = '$remoto'
         WHERE id = $id";    }
 
     mysqli_query($conexion, $consulta);

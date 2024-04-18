@@ -231,6 +231,12 @@
                             <input type="text" id="otro_periferico" name="otro_periferico" class="form-control">
                         </div>
                     </div>
+                    <div class="col-sm-4">
+                        <div class="mb-3">
+                            <label for="remoto" class="form-label">Remoto:</label>
+                            <input type="text" id="remoto" name="remoto" class="form-control">
+                        </div>
+                    </div>
                 </div>
             </div>
 
