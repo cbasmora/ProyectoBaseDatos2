@@ -91,7 +91,7 @@
                                 <option value="Computador_Portátil">Computador Portátil</option>
                                 <option value="Computador_Allinone">Computador All-in-One</option>
                                 <option value="Computador_Cabina">Computador de Cabina</option>
-                                <option value="Camaras">Cámaras</option>
+                                <option value="Cámaras">Cámaras</option>
                                 <option value="Telefonos_VoIP">Teléfonos VoIP</option>
                                 <option value="Antenas_Wifi">Antenas WiFi</option>
                                 <option value="Servidores">Servidores</option>
@@ -189,11 +189,13 @@
                                 <option value="Manifold">Manifold</option>
                                 <option value="Nutrición">Nutrición</option>
                                 <option value="Publicidad">Publicidad</option>
+                                <option value="Psicología">Psicología</option>
                                 <option value="Quirófanos">Quirófanos</option>
                                 <option value="Rayos X">Rayos X</option>
                                 <option value="Referencia">Referencia</option>
                                 <option value="Sistemas">Sistemas</option>
                                 <option value="Talento Humano">Talento Humano</option>
+                                <option value="Terapia Respiratoria">Terapia Respiratoria</option>
                                 <option value="UCI Neonatal">UCI Neonatal</option>
                                 <option value="UCI Pediátrica">UCI Pediátrica</option>
                             </select>

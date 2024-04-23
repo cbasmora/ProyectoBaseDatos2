@@ -424,7 +424,7 @@ if ($resultado->num_rows > 0) {
             $pdf->SetFont('Arial', 'B', 10); //Tamaño del texto para el contenido de las notas
 
             // Fecha
-            $pdf->Cell($columnWidth, 10, utf8_decode($row['categoria']), 1, 0, 'C', true);
+            $pdf->Cell($columnWidth, 10, utf8_decode('Categoría: '. $row['categoria']), 1, 0, 'C', true);
 
             // Categoría
             $pdf->Cell($columnWidth, 10, utf8_decode('Registró: ' . $row['usuario']), 1, 0, 'C', true);

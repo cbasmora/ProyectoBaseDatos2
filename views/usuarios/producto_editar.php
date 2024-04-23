@@ -101,7 +101,7 @@ $productos = mysqli_fetch_assoc($resultado);
     <option value="Computador_Portátil" <?php echo ($productos['categorias'] === 'Computador_Portátil') ? 'selected' : ''; ?>>Computador Portátil</option>
     <option value="Computador_Allinone" <?php echo ($productos['categorias'] === 'Computador_Allinone') ? 'selected' : ''; ?>>Computador All-in-One</option>
     <option value="Computador_Cabina" <?php echo ($productos['categorias'] === 'Computador_Cabina') ? 'selected' : ''; ?>>Computador de Cabina</option>
-    <option value="Camaras" <?php echo ($productos['categorias'] === 'Camaras') ? 'selected' : ''; ?>>Cámaras</option>
+    <option value="Cámaras" <?php echo ($productos['categorias'] === 'Camaras') ? 'selected' : ''; ?>>Cámaras</option>
     <option value="Telefonos_VoIP" <?php echo ($productos['categorias'] === 'Telefonos_VoIP') ? 'selected' : ''; ?>>Teléfonos VoIP</option>
     <option value="Antenas_Wifi" <?php echo ($productos['categorias'] === 'Antenas_Wifi') ? 'selected' : ''; ?>>Antenas WiFi</option>
     <option value="Servidores" <?php echo ($productos['categorias'] === 'Servidores') ? 'selected' : ''; ?>>Servidores</option>
@@ -200,11 +200,13 @@ $productos = mysqli_fetch_assoc($resultado);
     <option value="Manifold" <?php echo ($productos['ubicacion'] === 'Manifold') ? 'selected' : ''; ?>>Manifold</option>
     <option value="Nutrición" <?php echo ($productos['ubicacion'] === 'Nutrición') ? 'selected' : ''; ?>>Nutrición</option>
     <option value="Publicidad" <?php echo ($productos['ubicacion'] === 'Publicidad') ? 'selected' : ''; ?>>Publicidad</option>
+    <option value="Psicología" <?php echo ($productos['ubicacion'] === 'Psicología') ? 'selected' : ''; ?>>Psicología</option>
     <option value="Quirófanos" <?php echo ($productos['ubicacion'] === 'Quirófanos') ? 'selected' : ''; ?>>Quirófanos</option>
     <option value="Rayos X" <?php echo ($productos['ubicacion'] === 'Rayos X') ? 'selected' : ''; ?>>Rayos X</option>
     <option value="Referencia" <?php echo ($productos['ubicacion'] === 'Referencia') ? 'selected' : ''; ?>>Referencia</option>
     <option value="Sistemas" <?php echo ($productos['ubicacion'] === 'Sistemas') ? 'selected' : ''; ?>>Sistemas</option>
     <option value="Talento Humano" <?php echo ($productos['ubicacion'] === 'Talento Humano') ? 'selected' : ''; ?>>Talento Humano</option>
+    <option value="Talento Humano" <?php echo ($productos['ubicacion'] === 'Terapia Respiratoria') ? 'selected' : ''; ?>>Terapia Respiratoria</option>
     <option value="UCI Neonatal" <?php echo ($productos['ubicacion'] === 'UCI Neonatal') ? 'selected' : ''; ?>>UCI Neonatal</option>
     <option value="UCI Pediátrica" <?php echo ($productos['ubicacion'] === 'UCI Pediátrica') ? 'selected' : ''; ?>>UCI Pediátrica</option>
 </select>
